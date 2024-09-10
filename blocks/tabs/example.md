@@ -46,4 +46,4 @@ Lorem ipsum. Let's put some cards here!
 | Section Metadata           |
 +-----------+----------------+
 | tabTitle  |   A second tab |
-+-----------+----------------+
++-----------+----------------+ 
