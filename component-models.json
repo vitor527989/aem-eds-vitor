@@ -196,33 +196,21 @@
     ]
   },
   {
-    "id": "tabs",
+    "id": "tabs-item",
     "fields": [
       {
-        "component": "richtext",
-        "name": "tabTitle",
+        "component": "text",
+        "valueType": "string",
+        "name": "tabName",
         "value": "",
-        "label": "Tab Title",
-        "valueType": "string"
+        "label": "Tab Name"
       },
       {
         "component": "richtext",
-        "name": "firstTab",
+        "name": "content",
         "value": "",
-        "label": "First Tab Title",
+        "label": "Content",
         "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "secondTab",
-        "value": "",
-        "label": "Second Tab Title",
-        "valueType": "string"
-      },
-      {
-        "component": "cards",
-        "name": "cards",
-        "label": "Cards"
       }
     ]
   }
