@@ -11,7 +11,7 @@ async function loadData(path) {
   console.log('load data');
   const persistedQueryData = await aemHeadlessClient.runPersistedQuery(`${AEM_GRAPHQL_ENDPOINT}/TestQuery`, { path });
   console.log('persistedQueryData', persistedQueryData);
-  return persistedQueryData.data.testmodelByPath.item;
+  return persistedQueryData.data.testcfvitorByPath.item;
 }
 export default async function renderContentFragments(block) {
   console.log('hello-world-fragment decorate', block);
