@@ -1,4 +1,5 @@
 import AEMHeadless from 'https://cdn.skypack.dev/@adobe/aem-headless-client-js@v3.4.1';
+import { createOptimizedPicture } from '../../scripts/aem.js';
 
 const AEM_HOST = 'https://author-p139364-e1423304.adobeaemcloud.com';
 const AEM_PUBLISH_HOST = 'https://publish-p139364-e1423304.adobeaemcloud.com';
