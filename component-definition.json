@@ -203,6 +203,23 @@
               }
             }
           }
+        },
+        {
+          "title": "Tabs Content Fragment",
+          "id": "tabs-content-fragment",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Tab",
+                  "model": "tabs-content-fragment",
+                  "tabName" : "Tab Name",
+                  "content":"<p>Lorem Ipsum</p>"
+                }
+              }
+            }
+          }
         }
       ]
     }
