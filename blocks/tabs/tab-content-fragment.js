@@ -12,7 +12,7 @@ async function loadData(path) {
   console.log('persistedQueryData', persistedQueryData);
   return persistedQueryData.data.testmodelByPath.item;
 }
-async function renderContentFragments(block) {
+export default async function renderContentFragments(block) {
   console.log('hello-world-fragment decorate', block);
   console.log('hello-world-fragment before', JSON.stringify(block));
 
