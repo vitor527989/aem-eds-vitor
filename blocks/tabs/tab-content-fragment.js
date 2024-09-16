@@ -2,6 +2,7 @@ import AEMHeadless from 'https://cdn.skypack.dev/@adobe/aem-headless-client-js@v
 
 const AEM_HOST = 'https://author-p139364-e1423304.adobeaemcloud.com';
 const AEM_PUBLISH_HOST = 'https://publish-p139364-e1423304.adobeaemcloud.com';
+const AEM_GRAPHQL_ENDPOINT = 'TestCFModelVitor';
 const aemHeadlessClient = new AEMHeadless({
   serviceURL: AEM_HOST,
 });
