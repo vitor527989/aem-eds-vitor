@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-unresolved
 import { toClassName } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
+import renderContentFragments from './tab-content-fragment';
 
 export default async function decorate(block) {
   // build tablist
@@ -16,37 +17,41 @@ export default async function decorate(block) {
 
     // decorate tabpanel
     const tabpanel = block.children[i];
-    tabpanel.className = 'tabs-panel';
-    tabpanel.id = `tabpanel-${id}`;
-    tabpanel.setAttribute('aria-hidden', !!i);
-    tabpanel.setAttribute('aria-labelledby', `tab-${id}`);
-    tabpanel.setAttribute('role', 'tabpanel');
+    if (tabpanel.getAttribute('data-aue-model') === '\'tabs-content-fragment\'') {
+      renderContentFragments(tabpanel);
+    } else {
+      tabpanel.className = 'tabs-panel';
+      tabpanel.id = `tabpanel-${id}`;
+      tabpanel.setAttribute('aria-hidden', !!i);
+      tabpanel.setAttribute('aria-labelledby', `tab-${id}`);
+      tabpanel.setAttribute('role', 'tabpanel');
 
-    // build tab button
-    const button = document.createElement('button');
-    button.className = 'tabs-tab';
-    button.id = `tab-${id}`;
+      // build tab button
+      const button = document.createElement('button');
+      button.className = 'tabs-tab';
+      button.id = `tab-${id}`;
 
-    moveInstrumentation(tab.parentElement, tabpanel.lastElementChild);
-    button.innerHTML = tab.innerHTML;
+      moveInstrumentation(tab.parentElement, tabpanel.lastElementChild);
+      button.innerHTML = tab.innerHTML;
 
-    button.setAttribute('aria-controls', `tabpanel-${id}`);
-    button.setAttribute('aria-selected', !i);
-    button.setAttribute('role', 'tab');
-    button.setAttribute('type', 'button');
-    button.addEventListener('click', () => {
-      block.querySelectorAll('[role=tabpanel]').forEach((panel) => {
-        panel.setAttribute('aria-hidden', true);
+      button.setAttribute('aria-controls', `tabpanel-${id}`);
+      button.setAttribute('aria-selected', !i);
+      button.setAttribute('role', 'tab');
+      button.setAttribute('type', 'button');
+      button.addEventListener('click', () => {
+        block.querySelectorAll('[role=tabpanel]').forEach((panel) => {
+          panel.setAttribute('aria-hidden', true);
+        });
+        tablist.querySelectorAll('button').forEach((btn) => {
+          btn.setAttribute('aria-selected', false);
+        });
+        tabpanel.setAttribute('aria-hidden', false);
+        button.setAttribute('aria-selected', true);
       });
-      tablist.querySelectorAll('button').forEach((btn) => {
-        btn.setAttribute('aria-selected', false);
-      });
-      tabpanel.setAttribute('aria-hidden', false);
-      button.setAttribute('aria-selected', true);
-    });
-    tablist.append(button);
-    tab.remove();
+      tablist.append(button);
+      tab.remove();
     // moveInstrumentation(button.querySelector('p'), null);
+    }
   });
 
   block.prepend(tablist);
