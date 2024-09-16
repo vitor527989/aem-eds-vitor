@@ -212,5 +212,23 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "tabs-content-fragment",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tabName",
+        "value": "",
+        "label": "Tab Name"
+      },
+      {
+        "component": "aem-content-fragment",
+        "name": "picker",
+        "label": "Content Fragment Picker",
+        "valueType": "string"
+      }
+    ]
   }
 ]
