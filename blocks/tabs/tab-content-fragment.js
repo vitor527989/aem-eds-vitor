@@ -33,12 +33,12 @@ export default async function renderContentFragments(block) {
 
     const pElement = document.createElement('p');
     pElement.textContent = testLabel;
-    //const pictureElement = createOptimizedPicture(imageURL, '', false, [{ width: '750' }]);
+    const pictureElement = createOptimizedPicture(imageURL, '', false, [{ width: '750' }]);
     //fixAEMHost(AEM_PUBLISH_HOST, pictureElement);
 
     block.textContent = '';
     block.append(pElement);
-    //block.append(pictureElement);
+    block.append(pictureElement);
   } catch (e) {
     console.error('error persisted query', e);
   }
