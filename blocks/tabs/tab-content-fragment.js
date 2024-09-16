@@ -14,6 +14,19 @@ async function loadData(path) {
   console.log('persistedQueryData', persistedQueryData);
   return persistedQueryData.data.testcfvitorByPath.item;
 }
+
+function fixAEMHost(host, element) {
+  [...element.children].forEach((el) => {
+    const srcSetAttribute = el.getAttribute('srcset');
+    if (srcSetAttribute) {
+      el.setAttribute('srcset', `${host}${srcSetAttribute}`);
+    }
+    const srcAttribute = el.getAttribute('src');
+    if (srcAttribute) {
+      el.setAttribute('src', `${host}${srcAttribute}`);
+    }
+  });
+}
 export default async function renderContentFragments(block) {
   console.log('hello-world-fragment decorate', block);
   console.log('hello-world-fragment before', JSON.stringify(block));
@@ -35,7 +48,7 @@ export default async function renderContentFragments(block) {
     const pElement = document.createElement('p');
     pElement.textContent = testLabel;
     const pictureElement = createOptimizedPicture(imageURL, '', false, [{ width: '750' }]);
-    //fixAEMHost(AEM_PUBLISH_HOST, pictureElement);
+    fixAEMHost(AEM_PUBLISH_HOST, pictureElement);
 
     block.textContent = '';
     block.append(pElement);
