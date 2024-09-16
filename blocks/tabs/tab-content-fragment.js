@@ -24,15 +24,15 @@ export default async function renderContentFragments(block) {
     const result = await loadData(contentFragmentPath);
     console.log('retrieved result', result);
     const {
-      testproperty,
-      imageRef,
+      testLabel,
+      testcontent,
     } = result;
     // eslint-disable-next-line no-underscore-dangle
-    const imageURL = `${AEM_PUBLISH_HOST}${imageRef._dynamicUrl}`;
+    const imageURL = `${AEM_PUBLISH_HOST}${testcontent._dynamicUrl}`;
     console.log('suggested URL', imageURL);
 
     const pElement = document.createElement('p');
-    pElement.textContent = testproperty;
+    pElement.textContent = testLabel;
     //const pictureElement = createOptimizedPicture(imageURL, '', false, [{ width: '750' }]);
     //fixAEMHost(AEM_PUBLISH_HOST, pictureElement);
 
