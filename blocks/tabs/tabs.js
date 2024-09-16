@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-unresolved
 import { toClassName } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
-import renderContentFragments from './tab-content-fragment';
+import renderContentFragments from './tab-content-fragment.js';
 
 export default async function decorate(block) {
   // build tablist
