@@ -17,7 +17,7 @@ export default async function decorate(block) {
 
     // decorate tabpanel
     const tabpanel = block.children[i];
-    if (tabpanel.getAttribute('data-aue-model') === '\'tabs-content-fragment\'') {
+    if (tabpanel.getAttribute('data-aue-model') === 'tabs-content-fragment') {
       renderContentFragments(tabpanel);
     } else {
       tabpanel.className = 'tabs-panel';
