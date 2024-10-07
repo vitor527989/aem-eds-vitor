@@ -176,7 +176,8 @@ function getHomepageURL() {
   let link = originUrl;
   relativePathUrls.forEach((pathElement) => {
     if (pathElement !== '') {
-      link = link.concat('/', pathElement);
+      const elementToUse = pathElement.includes('.html') ? pathElement : pathElement.concat(pathElement);
+      link = link.concat('/', elementToUse);
       crumbs.push({ title: pathElement, url: link });
     }
   });
