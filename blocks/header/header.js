@@ -117,9 +117,9 @@ function getDirectTextContent(menuItem) {
 async function buildBreadcrumbsFromNavTree(nav, currentUrl) {
   const crumbs = [];
 
-  const homeUrl = window.location.origin;
+  const homeUrl = document.querySelector('.nav-brand a[href]').href;
 
-  let menuItem = window.location.pathname.split('/');
+  let menuItem = Array.from(nav.querySelectorAll('a')).find((a) => a.href === currentUrl);
   if (menuItem) {
     do {
       const link = menuItem.querySelector(':scope > a');
@@ -167,6 +167,15 @@ async function buildBreadcrumbs() {
   breadcrumbs.append(ol);
   return breadcrumbs;
 }
+
+/*function getHomepageURL() {
+  const originUrl = window.location.origin;
+  const relativePathUrls = window.location.pathname.split('/');
+  let link = originUrl;
+  relativePathUrls.forEach((pathElement) => {
+    link = link.concat('/', pathElement);
+  });
+}*/
 
 /**
  * loads and decorates the header, mainly the nav
