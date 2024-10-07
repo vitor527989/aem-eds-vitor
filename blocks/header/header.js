@@ -173,7 +173,7 @@ function getHomepageURL() {
   const crumbs = [];
   const originUrl = window.location.origin;
   const relativePathUrls = window.location.pathname.split('/');
-  let link = originUrl;
+  let link = originUrl.substring(0, originUrl.length - 1);
   relativePathUrls.forEach((pathElement) => {
     link = link.concat('/', pathElement);
     crumbs.push({ title: pathElement, url: link });
