@@ -115,21 +115,21 @@ function getDirectTextContent(menuItem) {
 }
 
 async function buildBreadcrumbsFromNavTree(nav, currentUrl) {
-  const crumbs = [];
+  const crumbs = getHomepageURL();
 
-  const homeUrl = document.querySelector('.nav-brand a[href]').href;
-
-  let menuItem = Array.from(nav.querySelectorAll('a')).find((a) => a.href === currentUrl);
-  if (menuItem) {
-    do {
-      const link = menuItem.querySelector(':scope > a');
-      crumbs.unshift({ title: getDirectTextContent(menuItem), url: link ? link.href : null });
-      menuItem = menuItem.closest('ul')?.closest('li');
-    } while (menuItem);
-  } else if (currentUrl !== homeUrl) {
-    crumbs.unshift({ title: getMetadata('og:title'), url: currentUrl });
-  }
-  const test = await fetch('https://author-p139364-e1423304.adobeaemcloud.com/content/aem-eds-vitor/test.html');
+  const homeUrl = window.location.origin;
+  /*
+    let menuItem = Array.from(nav.querySelectorAll('a')).find((a) => a.href === currentUrl);
+    if (menuItem) {
+      do {
+        const link = menuItem.querySelector(':scope > a');
+        crumbs.unshift({ title: getDirectTextContent(menuItem), url: link ? link.href : null });
+        menuItem = menuItem.closest('ul')?.closest('li');
+      } while (menuItem);
+    } else if (currentUrl !== homeUrl) {
+      crumbs.unshift({ title: getMetadata('og:title'), url: currentUrl });
+    }
+    */
   const placeholders = await fetchPlaceholders();
   const homePlaceholder = placeholders.breadcrumbsHomeLabel || 'Home';
 
@@ -168,7 +168,7 @@ async function buildBreadcrumbs() {
   return breadcrumbs;
 }
 
-/*
+
 function getHomepageURL() {
   const crumbs = [];
   const originUrl = window.location.origin;
@@ -176,10 +176,11 @@ function getHomepageURL() {
   let link = originUrl;
   relativePathUrls.forEach((pathElement) => {
     link = link.concat('/', pathElement);
-    crumbs.push({title: });
+    crumbs.push({ title: pathElement, url: link });
   });
+  return crumbs;
 }
-*/
+
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
