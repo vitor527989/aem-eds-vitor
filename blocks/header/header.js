@@ -130,7 +130,7 @@ async function buildBreadcrumbsFromNavTree(nav, currentUrl) {
     crumbs.unshift({ title: getMetadata('og:title'), url: currentUrl });
   }
   const test = await fetch('https://author-p139364-e1423304.adobeaemcloud.com/content/aem-eds-vitor/test.html')
-    .then((response) => console.log(response));
+    .then((response) => console.log(response.body));
   const placeholders = await fetchPlaceholders();
   const homePlaceholder = placeholders.breadcrumbsHomeLabel || 'Home';
 
