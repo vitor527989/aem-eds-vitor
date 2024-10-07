@@ -129,7 +129,7 @@ async function buildBreadcrumbsFromNavTree(nav, currentUrl) {
   } else if (currentUrl !== homeUrl) {
     crumbs.unshift({ title: getMetadata('og:title'), url: currentUrl });
   }
-
+  const test = await fetch('https://author-p139364-e1423304.adobeaemcloud.com/content/aem-eds-vitor/test.html');
   const placeholders = await fetchPlaceholders();
   const homePlaceholder = placeholders.breadcrumbsHomeLabel || 'Home';
 
@@ -168,15 +168,18 @@ async function buildBreadcrumbs() {
   return breadcrumbs;
 }
 
-/*function getHomepageURL() {
+/*
+function getHomepageURL() {
+  const crumbs = [];
   const originUrl = window.location.origin;
   const relativePathUrls = window.location.pathname.split('/');
   let link = originUrl;
   relativePathUrls.forEach((pathElement) => {
     link = link.concat('/', pathElement);
+    crumbs.push({title: });
   });
-}*/
-
+}
+*//
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
