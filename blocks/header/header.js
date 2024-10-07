@@ -104,7 +104,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 }
 
 function getDirectTextContent(menuItem) {
-  const menuLink = menuItem.querySelector(':scope > a');
+  const menuLink = menuItem.querySelector(':scope > :where(a,p)');
   if (menuLink) {
     return menuLink.textContent.trim();
   }
@@ -208,6 +208,10 @@ export default async function decorate(block) {
           navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
         }
       });
+    });
+    navSections.querySelectorAll('.button-container').forEach((buttonContainer) => {
+      buttonContainer.classList.remove('button-container');
+      buttonContainer.querySelector('.button').classList.remove('button');
     });
   }
 
