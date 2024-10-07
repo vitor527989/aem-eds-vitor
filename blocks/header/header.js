@@ -179,7 +179,7 @@ function getHomepageURL() {
     crumbs.push({title: });
   });
 }
-*//
+*/
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
