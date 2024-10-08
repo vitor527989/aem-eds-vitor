@@ -258,7 +258,7 @@ export default async function decorate(block) {
   navWrapper.append(nav);
   block.append(navWrapper);
 
-  //if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
+  if (getMetadata('cq-tags').toLowerCase().includes('breadcrumbs')) {
     navWrapper.append(await buildBreadcrumbs());
-  //}
+  }
 }
