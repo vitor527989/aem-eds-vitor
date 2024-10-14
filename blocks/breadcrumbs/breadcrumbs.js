@@ -5,6 +5,10 @@ function getHomepageURL() {
   const originUrl = window.location.origin;
   const relativePathUrls = window.location.pathname.split('/');
   let link = originUrl;
+  let c = fetch('https://author-p139364-e1423304.adobeaemcloud.com/content/aem-eds-vitor/test/test123/insidetest.html').then(response => {
+    console.log(response);
+  });
+  console.log(c);
   relativePathUrls.forEach((pathElement) => {
     if (pathElement !== '') {
       link = link.concat('/', pathElement);
