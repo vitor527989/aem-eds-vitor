@@ -6,7 +6,9 @@ function getHomepageURL() {
   const relativePathUrls = window.location.pathname.split('/');
   let link = originUrl;
   let c = fetch('https://author-p139364-e1423304.adobeaemcloud.com/content/aem-eds-vitor/test/test123.html').then(response => {
-    console.log(response);
+    response.text().then(r => {
+      console.log(r);
+    });
   });
   console.log(c);
   relativePathUrls.forEach((pathElement) => {
