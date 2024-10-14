@@ -1,4 +1,4 @@
-import { fetchPlaceholders } from '../../scripts/aem.js';
+import { fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
 
 function getHomepageURL() {
   const crumbs = [];
@@ -10,6 +10,7 @@ function getHomepageURL() {
       link = link.concat('/', pathElement);
       let linkToUse = link;
       linkToUse = pathElement.includes('.html') ? link : link.concat('.html');
+      crumbs.unshift({ title: getMetadata('og:title'), url: linkToUse });
       crumbs.push({ title: pathElement, url: linkToUse });
     }
   });
