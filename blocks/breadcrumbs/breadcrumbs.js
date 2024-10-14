@@ -1,12 +1,11 @@
 import { fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
-import { loadFragment } from '../fragment/fragment.js';
 
 async function getHomepageURL() {
   const crumbs = [];
   const originUrl = window.location.origin;
   const relativePathUrls = window.location.pathname.split('/');
   let link = originUrl;
-  const fragment = await loadFragment('/test/test123.html');
+  const fragment = await fetch('/test/test123.html');
   console.log(fragment);
   relativePathUrls.forEach((pathElement) => {
     if (pathElement !== '') {
