@@ -6,7 +6,8 @@ async function getHomepageURL() {
   const relativePathUrls = window.location.pathname.split('/');
   let link = originUrl;
   const fragment = await fetch('/test/test123.html');
-  console.log(fragment);
+  const response = await fragment.text();
+  console.log(response);
   relativePathUrls.forEach((pathElement) => {
     if (pathElement !== '') {
       link = link.concat('/', pathElement);
