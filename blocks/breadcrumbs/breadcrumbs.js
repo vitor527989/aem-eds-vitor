@@ -1,16 +1,13 @@
 import { fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
+import { loadFragment } from '../fragment/fragment.js';
 
-function getHomepageURL() {
+async function getHomepageURL() {
   const crumbs = [];
   const originUrl = window.location.origin;
   const relativePathUrls = window.location.pathname.split('/');
   let link = originUrl;
-  let c = fetch('https://author-p139364-e1423304.adobeaemcloud.com/content/aem-eds-vitor/test/test123.html').then(response => {
-    response.text().then(r => {
-      console.log(r);
-    });
-  });
-  console.log(c);
+  const fragment = await loadFragment('/test/test123.html');
+  console.log(fragment);
   relativePathUrls.forEach((pathElement) => {
     if (pathElement !== '') {
       link = link.concat('/', pathElement);
