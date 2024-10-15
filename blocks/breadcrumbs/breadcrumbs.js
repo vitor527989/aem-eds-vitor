@@ -34,25 +34,6 @@ async function buildBreadcrumbsLinks(rootLink) {
 
 async function buildBreadcrumbsFromPageLink(currentUrl, rootLink) {
   const crumbs = await buildBreadcrumbsLinks(rootLink);
-
-  const homeUrl = window.location.origin;
-  /*
-    let menuItem = Array.from(nav.querySelectorAll('a')).find((a) => a.href === currentUrl);
-    if (menuItem) {
-      do {
-        const link = menuItem.querySelector(':scope > a');
-        crumbs.unshift({ title: getDirectTextContent(menuItem), url: link ? link.href : null });
-        menuItem = menuItem.closest('ul')?.closest('li');
-      } while (menuItem);
-    } else if (currentUrl !== homeUrl) {
-      crumbs.unshift({ title: getMetadata('og:title'), url: currentUrl });
-    }
-    */
-  const placeholders = await fetchPlaceholders();
-  const homePlaceholder = placeholders.breadcrumbsHomeLabel || 'Home';
-
-  crumbs.unshift({ title: homePlaceholder, url: homeUrl });
-
   // last link is current page and should not be linked
   if (crumbs.length > 1) {
     crumbs[crumbs.length - 1].url = null;
