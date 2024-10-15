@@ -1,33 +1,39 @@
 import { fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
 
-async function getParentPage() {
-  const response = await fetch('/content/aem-eds-vitor/test/test123.html');
+async function getParentPageTitle(link) {
+  const response = await fetch(link);
   const html = await response.text();
   const parser = new DOMParser();
   const pageDoc = parser.parseFromString(html, 'text/html');
-  getMetadata('og:title', pageDoc);
+  return getMetadata('og:title', pageDoc);
 }
 
-async function getHomepageURL() {
+async function getHomepageURL(rootLink) {
   const crumbs = [];
   const originUrl = window.location.origin;
   const relativePathUrls = window.location.pathname.split('/');
   let link = originUrl;
-  getParentPage(link);
+  let rootReached = false;
   relativePathUrls.forEach((pathElement) => {
     if (pathElement !== '') {
+      let parentPageTitle = '';
       link = link.concat('/', pathElement);
       let linkToUse = link;
       linkToUse = pathElement.includes('.html') ? link : link.concat('.html');
-      crumbs.unshift({ title: getMetadata('og:title'), url: linkToUse });
-      crumbs.push({ title: pathElement, url: linkToUse });
+      if (linkToUse === originUrl + rootLink && !rootReached) {
+        rootReached = true;
+      }
+      if (rootReached) {
+        parentPageTitle = getParentPageTitle(linkToUse);
+        crumbs.push({ title: parentPageTitle, url: linkToUse });
+      }
     }
   });
   return crumbs;
 }
 
-async function buildBreadcrumbsFromNavTree(nav, currentUrl) {
-  const crumbs = getHomepageURL();
+async function buildBreadcrumbsFromPageLink(currentUrl, rootLink) {
+  const crumbs = getHomepageURL(rootLink);
 
   const homeUrl = window.location.origin;
   /*
@@ -55,6 +61,11 @@ async function buildBreadcrumbsFromNavTree(nav, currentUrl) {
   return crumbs;
 }
 
+export function parseLink(el) {
+  if (!el) return '';
+  return el.querySelector('a')?.getAttribute('href');
+}
+
 export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
@@ -63,8 +74,10 @@ export default async function decorate(block) {
   const breadcrumbs = document.createElement('nav');
   breadcrumbs.className = 'breadcrumbs';
 
-  const crumbs = await buildBreadcrumbsFromNavTree(document.querySelector('.nav-sections'), document.location.href);
+  const rootLink = parseLink(block);
+  const crumbs = await buildBreadcrumbsFromPageLink(document.location.href, rootLink);
 
+  block.innerText = '';
   const ol = document.createElement('ol');
   ol.append(...crumbs.map((item) => {
     const li = document.createElement('li');
