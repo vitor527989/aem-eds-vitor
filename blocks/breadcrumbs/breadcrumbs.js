@@ -5,9 +5,11 @@ async function getHomepageURL() {
   const originUrl = window.location.origin;
   const relativePathUrls = window.location.pathname.split('/');
   let link = originUrl;
-  const fragment = await fetch('/test/test123.html');
-  const response = await fragment.json();
-  console.log(response);
+  const response = await fetch('/test/test123.html');
+  const html = await response.text();
+  const parser = new DOMParser();
+  const pageDoc = parser.parseFromString(html, 'text/html');
+  console.log(pageDoc);
   relativePathUrls.forEach((pathElement) => {
     if (pathElement !== '') {
       link = link.concat('/', pathElement);
