@@ -73,7 +73,6 @@ export default async function decorate(block) {
     }
     return li;
   }));
-
   breadcrumbs.append(ol);
   block.innerText = '';
   block.innerHTML = breadcrumbs;
