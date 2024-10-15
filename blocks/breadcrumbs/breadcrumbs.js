@@ -58,7 +58,7 @@ export default async function decorate(block) {
   const rootLink = parseLink(block);
   const crumbs = await buildBreadcrumbsFromPageLink(document.location.href, rootLink);
 
-  block.innerText = '';
+
   const ol = document.createElement('ol');
   ol.append(...crumbs.map((item) => {
     const li = document.createElement('li');
@@ -75,5 +75,6 @@ export default async function decorate(block) {
   }));
 
   breadcrumbs.append(ol);
-  navWrapper.append(breadcrumbs);
+  block.innerText = '';
+  block.innerHTML = breadcrumbs;
 }
