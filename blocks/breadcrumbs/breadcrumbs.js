@@ -24,7 +24,7 @@ async function getHomepageURL(rootLink) {
         rootReached = true;
       }
       if (rootReached) {
-        [parentPageTitle] = await getParentPageTitle(linkToUse);
+        parentPageTitle = await getParentPageTitle(linkToUse);
         crumbs.push({title: parentPageTitle, url: linkToUse});
       }
     }
