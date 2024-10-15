@@ -75,5 +75,5 @@ export default async function decorate(block) {
   }));
 
   breadcrumbs.append(ol);
-  return breadcrumbs;
+  navWrapper.append(breadcrumbs);
 }
