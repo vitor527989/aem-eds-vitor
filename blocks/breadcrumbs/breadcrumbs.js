@@ -1,15 +1,19 @@
 import { fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
 
+async function getParentPage() {
+  const response = await fetch('/content/aem-eds-vitor/test/test123.html');
+  const html = await response.text();
+  const parser = new DOMParser();
+  const pageDoc = parser.parseFromString(html, 'text/html');
+  getMetadata('og:title', pageDoc);
+}
+
 async function getHomepageURL() {
   const crumbs = [];
   const originUrl = window.location.origin;
   const relativePathUrls = window.location.pathname.split('/');
   let link = originUrl;
-  const response = await fetch('/test/test123.html');
-  const html = await response.text();
-  const parser = new DOMParser();
-  const pageDoc = parser.parseFromString(html, 'text/html');
-  console.log(pageDoc);
+  getParentPage(link);
   relativePathUrls.forEach((pathElement) => {
     if (pathElement !== '') {
       link = link.concat('/', pathElement);
