@@ -58,7 +58,16 @@ export default async function decorate(block) {
   const rootLink = parseLink(block);
   const crumbs = await buildBreadcrumbsFromPageLink(document.location.href, rootLink);
 
-
+  let htmlContent = '<nav class="breadcrumbs"><ol>';
+  crumbs.forEach((crumb) => {
+    if (crumb['aria-current']) {
+      htmlContent += '<li aria-current="${crumb["aria-current"]}">${crumb.title}</li>';
+    } else {
+      htmlContent += '<li><a href="${crumb.url}">${crumb.title}</a></li>';
+    }
+  });
+  htmlContent += '</ol>';
+  /*
   const ol = document.createElement('ol');
   ol.append(...crumbs.map((item) => {
     const li = document.createElement('li');
@@ -73,8 +82,9 @@ export default async function decorate(block) {
     }
     return li;
   }));
-  
+
   breadcrumbs.append(ol);
+  */
   block.innerText = '';
-  block.innerHTML = breadcrumbs;
+  block.innerHTML = htmlContent;
 }
