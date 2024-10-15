@@ -14,7 +14,7 @@ async function getHomepageURL(rootLink) {
   const relativePathUrls = window.location.pathname.split('/');
   let link = originUrl;
   let rootReached = false;
-  relativePathUrls.forEach((pathElement) => {
+  for (const pathElement of relativePathUrls) {
     if (pathElement !== '') {
       let parentPageTitle = '';
       link = link.concat('/', pathElement);
@@ -24,11 +24,11 @@ async function getHomepageURL(rootLink) {
         rootReached = true;
       }
       if (rootReached) {
-        parentPageTitle = getParentPageTitle(linkToUse);
-        crumbs.push({ title: parentPageTitle, url: linkToUse });
+        [parentPageTitle] = await getParentPageTitle(linkToUse);
+        crumbs.push({title: parentPageTitle, url: linkToUse});
       }
     }
-  });
+  }
   return crumbs;
 }
 
