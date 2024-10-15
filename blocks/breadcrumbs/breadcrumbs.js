@@ -61,9 +61,9 @@ export default async function decorate(block) {
   let htmlContent = '<nav class="breadcrumbs"><ol>';
   crumbs.forEach((crumb) => {
     if (crumb['aria-current']) {
-      htmlContent += '<li aria-current="${crumb["aria-current"]}">${crumb.title}</li>';
+      htmlContent += `<li aria-current=${crumb['aria-current']}>${crumb.title}</li>`;
     } else {
-      htmlContent += '<li><a href="${crumb.url}">${crumb.title}</a></li>';
+      htmlContent += `<li><a href="${crumb.url}">${crumb.title}</a></li>`;
     }
   });
   htmlContent += '</ol>';
