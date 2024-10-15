@@ -1,5 +1,5 @@
 /* breadcrumbs */
-header .breadcrumbs {
+.breadcrumbs {
     display: none;
     margin: auto;
     max-width: 1248px;
@@ -9,7 +9,7 @@ header .breadcrumbs {
     overflow: hidden;
 }
 
-header .breadcrumbs ol {
+.breadcrumbs ol {
     display: flex;
     flex-flow: wrap;
     list-style: none;
@@ -20,23 +20,23 @@ header .breadcrumbs ol {
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
-header .breadcrumbs ol li {
+.breadcrumbs ol li {
     padding: 0;
     color: var(--dark-color);
 }
 
-header .breadcrumbs ol li:not(:last-child)::after {
+.breadcrumbs ol li:not(:last-child)::after {
     content: '/';
     padding-left: 1ch;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
-header .breadcrumbs ol li[aria-current] {
+.breadcrumbs ol li[aria-current] {
     color: var(--text-color);
 }
 
 @media (width >= 900px) {
-    header .breadcrumbs {
+    .breadcrumbs {
         display: block;
         max-width: 1264px;
         padding: 0 32px;
