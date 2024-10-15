@@ -8,7 +8,7 @@ async function getParentPageTitle(link) {
   return getMetadata('og:title', pageDoc);
 }
 
-async function getHomepageURL(rootLink) {
+async function buildBreadcrumbsLinks(rootLink) {
   const crumbs = [];
   const originUrl = window.location.origin;
   const relativePathUrls = window.location.pathname.split('/');
@@ -33,7 +33,7 @@ async function getHomepageURL(rootLink) {
 }
 
 async function buildBreadcrumbsFromPageLink(currentUrl, rootLink) {
-  const crumbs = getHomepageURL(rootLink);
+  const crumbs = await buildBreadcrumbsLinks(rootLink);
 
   const homeUrl = window.location.origin;
   /*
