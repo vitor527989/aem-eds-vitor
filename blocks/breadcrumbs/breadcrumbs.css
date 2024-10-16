@@ -1,44 +1,47 @@
-/* breadcrumbs */
-.breadcrumbs {
-    display: none;
-    margin: auto;
-    max-width: 1248px;
-    height: var(--breadcrumbs-height);
-    padding: 0 24px;
-    font-size: var(--body-font-size-xs);
-    overflow: hidden;
+:root {
+    --arrow-icon-size: 16px;
 }
 
-.breadcrumbs ol {
+.section.breadcrumbs-container {
+    padding-top: var(--spacing-64);
+    padding-bottom: var(--spacing-32);
+}
+
+.breadcrumbs {
+    display: none;
+    font-size: var(--font-size-xs);
+}
+
+.breadcrumbs .breadcrumbs-list {
     display: flex;
+    align-items: center;
     flex-flow: wrap;
     list-style: none;
     padding: 0;
     margin-top: 0;
     margin-bottom: 0;
-    gap: 1ch;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
-.breadcrumbs ol li {
+.breadcrumbs .breadcrumbs-item {
     padding: 0;
-    color: var(--dark-color);
+    margin-right: var(--spacing-8);
 }
 
-.breadcrumbs ol li:not(:last-child)::after {
-    content: '/';
-    padding-left: 1ch;
+.breadcrumbs .breadcrumbs-item a {
+    color: var(--color-midnight-500);
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
-.breadcrumbs ol li[aria-current] {
-    color: var(--text-color);
+.breadcrumbs .breadcrumbs-item[aria-current] {
+    color: var(--color-midnight-900);
+}
+
+.breadcrumbs .arrow-left {
+    height: var(--arrow-icon-size);
+    width: var(--arrow-icon-size);
 }
 
 @media (width >= 900px) {
     .breadcrumbs {
         display: block;
-        max-width: 1264px;
-        padding: 0 32px;
     }
 }
