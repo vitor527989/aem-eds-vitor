@@ -66,6 +66,7 @@ export default async function decorate(block) {
           <nav class="breadcrumbs">
             <ol class="breadcrumbs-list">
         `;
+  
   crumbs.forEach((crumb) => {
     if (crumb["aria-current"]) {
       htmlContent += `
