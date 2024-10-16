@@ -14,6 +14,7 @@ async function buildBreadcrumbsLinks(rootLink) {
   const relativePathUrls = window.location.pathname.split('/');
   let link = originUrl;
   let rootReached = false;
+  // eslint-disable-next-line no-restricted-syntax
   for (const pathElement of relativePathUrls) {
     if (pathElement !== '') {
       let parentPageTitle = '';
@@ -24,6 +25,7 @@ async function buildBreadcrumbsLinks(rootLink) {
         rootReached = true;
       }
       if (rootReached) {
+        // eslint-disable-next-line no-await-in-loop
         parentPageTitle = await getParentPageTitle(linkToUse);
         crumbs.push({title: parentPageTitle, url: linkToUse});
       }
@@ -35,6 +37,9 @@ async function buildBreadcrumbsLinks(rootLink) {
 async function buildBreadcrumbsFromPageLink(currentUrl, rootLink) {
   const crumbs = await buildBreadcrumbsLinks(rootLink);
   // last link is current page and should not be linked
+  if (crumbs.length === 0) {
+    return crumbs;
+  }
   if (crumbs.length > 1) {
     crumbs[crumbs.length - 1].url = null;
   }
