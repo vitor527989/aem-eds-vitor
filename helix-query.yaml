@@ -1,0 +1,11 @@
+version: 1
+indices:
+  site-en:
+    include:
+      - '**/test/**'
+    target: /test/query-index.json
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          attribute(el, 'content')
