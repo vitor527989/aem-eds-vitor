@@ -9,10 +9,6 @@ indices:
         select: main div.excursion-profile a
         value: |
           attribute(el, 'href')
-      page:
-        select: head > meta[property="og:url"]
-        value: |
-          attribute(el, 'content')
   site-iteneraries:
     include:
       - '**/cruises/**'
@@ -22,7 +18,3 @@ indices:
         select: main div.itinerary-detail-profile a
         value: |
           attribute(el, 'href')
-      page:
-        select: head > meta[property="og:url"]
-        value: |
-          attribute(el, 'content')
