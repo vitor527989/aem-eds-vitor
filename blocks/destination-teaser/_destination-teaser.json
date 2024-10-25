@@ -1,0 +1,73 @@
+{
+  "definitions": [
+    {
+      "title": "Destination teaser",
+      "id": "destination-teaser",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Destination teaser",
+              "model": "destination-teaser"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "destination-teaser",
+      "fields": [
+        {
+          "component": "text",
+          "name": "heading",
+          "label": "Heading"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "reference",
+          "name": "image",
+          "label": "Image"
+        },
+        {
+          "component": "text",
+          "name": "image_alt",
+          "label": "Image label"
+        },
+        {
+          "component": "aem-content",
+          "name": "button_link",
+          "label": "Link",
+          "validation": {
+            "rootPath": "/content/celestyal"
+          }
+        },
+        {
+          "component": "text",
+          "name": "button_label",
+          "label": "Link Label"
+        },
+        {
+          "component": "aem-content",
+          "name": "button-outlined_link",
+          "label": "Link",
+          "validation": {
+            "rootPath": "/content/celestyal"
+          }
+        },
+        {
+          "component": "text",
+          "name": "button-outlined_label",
+          "label": "Link Label"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

@@ -1,0 +1,87 @@
+/* reset inherited styling */
+.content-teasers p,
+.content-teasers h2,
+.content-teasers h3 {
+    margin: 0;
+}
+
+.content-teasers a:hover {
+    text-decoration: none;
+}
+
+.content-teasers-container {
+    overflow: hidden;
+}
+
+.content-teasers {
+    padding: var(--spacing-88) 0;
+}
+
+.content-teasers .teaser-top {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+    max-width: var(--text-max-width);
+}
+
+.content-teasers .teasers {
+    margin-top: var(--spacing-64);
+}
+
+.content-teasers .teaser-image {
+    border-radius: var(--radius-md);
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    width: 100%;
+}
+
+.content-teasers.content-teasers--tall .teaser-image {
+    aspect-ratio: 2 / 3;
+}
+
+.content-teasers .teaser-heading {
+    margin-top: var(--spacing-12);
+}
+
+/* carousel specifics */
+/* stylelint-disable selector-class-pattern */
+.content-teasers .f-carousel {
+    --f-carousel-spacing: var(--spacing-32) !important;
+    --f-carousel-dots-height: var(--spacing-64) !important;
+    --slides-per-page: 1;
+    --slides-count: 1;
+    --slides-additional-space: calc(
+        var(--f-carousel-spacing) * (var(--slides-per-page) - 1)
+    );
+    --slides-reduced-width: calc(
+        var(--slides-additional-space) / var(--slides-per-page)
+    );
+    --f-carousel-slide-width: calc(
+        100% / min(var(--slides-per-page), var(--slides-count)) -
+            var(--slides-reduced-width)
+    ) !important;
+}
+
+.content-teasers .f-carousel__viewport {
+    overflow: visible;
+}
+
+@media (width >= 500px) {
+    .content-teasers .f-carousel {
+        --slides-per-page: 2;
+    }
+}
+
+@media (width >= 768px) {
+    .content-teasers .f-carousel {
+        --slides-per-page: 3;
+    }
+}
+
+@media (width >= 1024px) {
+    .content-teasers .f-carousel {
+        --slides-per-page: 4;
+    }
+}

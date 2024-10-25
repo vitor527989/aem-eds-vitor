@@ -1,0 +1,133 @@
+.excursion-teasers {
+    text-align: left;
+}
+
+.excursion-wrapper.excursion-wrapper {
+    border-radius: var(--radius-md);
+    background-color: var(--color-white-100);
+    overflow: hidden;
+    max-width: 304px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 12px;
+    text-align: left;
+}
+
+.excursion-image-wrapper {
+    position: relative;
+    aspect-ratio: 4/3;
+}
+
+.excursion-image-wrapper picture {
+    display: flex;
+    aspect-ratio: 4/3;
+}
+
+.excursion-image-wrapper img {
+    object-fit: cover;
+}
+
+.label-wrapper {
+    background-color: var(--color-surface-inverted);
+    color: var(--color-text-inverted);
+    border-radius: 7px;
+    padding: var(--spacing-4) var(--spacing-16);
+    position: absolute;
+    top: var(--spacing-12);
+    left: var(--spacing-12);
+}
+
+.excursion-subsection {
+    padding: var(--spacing-24) var(--spacing-16);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.excursion-title {
+    margin-top: var(--spacing-12);
+    margin-bottom: var(--spacing-24);
+}
+
+.excursion-description {
+    margin-bottom: var(--spacing-12);
+}
+
+.excursion-details {
+    display: flex;
+    color: var(--color-text-subtitle);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-24);
+}
+
+.excursion-details span:not(:last-child)::after {
+    content: ".";
+    display: inline-flex;
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-sm);
+    text-align: center;
+    margin: 0 var(--spacing-4);
+    transform: translateY(-4px);
+}
+
+.excursion-subsection .button {
+    width: 100%;
+    margin: 0;
+}
+
+/* stylelint-disable */
+/* Carousel specific styling */
+.excursion-carousel-wrapper.excursion-carousel-wrapper.f-carousel {
+    --f-carousel-slide-width: calc(100% - 12px);
+    --f-button-height: 54px;
+    --f-button-width: 52px;
+    --f-button-svg-width: 24px;
+    --f-button-svg-height: 24px;
+
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: calc(var(--f-carousel-dots-height) + var(--f-button-height));
+}
+
+.excursion-carousel-wrapper.excursion-carousel-wrapper
+    .f-carousel__nav
+    .f-button {
+    background: var(--color-surface-primary);
+    border-radius: 100px;
+    border: transparent;
+    color: var(--color-midnight-900);
+    display: flex;
+}
+
+.excursion-carousel-wrapper.excursion-carousel-wrapper
+    .f-carousel__nav
+    .f-button
+    svg {
+    stroke: none;
+}
+
+.excursion-carousel-wrapper .f-carousel__nav.f-carousel__nav {
+    position: absolute;
+    bottom: calc(var(--f-button-height) * -1);
+    right: var(--spacing-64);
+}
+
+.excursion-carousel-wrapper.excursion-carousel-wrapper
+    .f-carousel__nav
+    .is-prev.is-prev {
+    right: var(--f-button-prev-pos);
+    left: unset;
+}
+
+.excursion-carousel-wrapper.excursion-carousel-wrapper
+    .f-carousel__nav
+    .is-next.is-next {
+    left: var(--f-button-prev-pos);
+}
+
+@media (width >= 768px) {
+    .excursion-carousel-wrapper.f-carousel {
+        --f-carousel-slide-width: calc((100% - 12px) / 4);
+    }
+}
+/* stylelint-enable */

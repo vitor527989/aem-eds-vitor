@@ -1,0 +1,143 @@
+.banner-promotion {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    gap: var(--spacing-24);
+    padding-top: var(--spacing-12);
+    padding-bottom: var(--spacing-12);
+    color: var(--color-midnight-900);
+}
+
+.banner-promotion--fullwidth.banner-promotion--fullwidth {
+    max-width: none;
+    padding: 0;
+}
+
+.banner-promotion--rhodes {
+    background: var(--gradient-tonal-rhodes);
+}
+
+.banner-promotion--tertiary {
+    background: var(--color-surface-tertiary);
+}
+
+.banner-promotion--cypress {
+    background: var(--color-surface-cypress);
+}
+
+.banner-promotion--blossom {
+    background: var(--color-surface-blossom);
+}
+
+.banner-promotion--highlight {
+    background: var(--color-surface-highlight);
+}
+
+.banner-promotion p {
+    margin: 0;
+}
+
+.banner-promotion .link {
+    flex: none;
+    margin: 0;
+}
+
+.has-fallback-img {
+    height: 317px;
+    overflow: hidden;
+}
+
+.has-fallback-img .img-wrapper {
+    position: absolute;
+    inset: 0;
+}
+
+.has-fallback-img .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+/* tablet specifics */
+@media (width >= 768px) {
+    .banner-promotion {
+        justify-content: center;
+    }
+}
+
+/* variation countdown */
+.banner-promotion.countdown {
+    align-items: flex-start;
+}
+
+.banner-promotion .countdown {
+    margin-top: var(--spacing-8);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-12);
+}
+
+.banner-promotion .countdown-value {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+}
+
+/* variant countdown big */
+.banner-promotion.countdown-big {
+    flex-direction: column;
+    text-align: center;
+    padding-top: var(--spacing-24);
+    padding-bottom: var(--spacing-24);
+}
+
+.banner-promotion.countdown-big .countdown-big {
+    display: flex;
+    gap: var(--spacing-12);
+    text-align: center;
+    font-size: var(--font-size-3xl);
+}
+
+.banner-promotion.countdown-big .unit {
+    font-size: var(--font-size-xs);
+}
+
+.banner-promotion.countdown-big .sub-text {
+    font-weight: 900;
+    font-size: var(--font-size-3xl);
+    line-height: var(--line-height-2xl);
+    margin-bottom: var(--spacing-24);
+}
+
+/* desktop specifics */
+@media (width >= 900px) {
+    .banner-promotion.countdown-big {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .banner-promotion.countdown-big .countdown-big {
+        gap: var(--spacing-16);
+    }
+
+    .countdown-big .w-30 {
+        width: 33.33%;
+    }
+
+    .countdown-big .text {
+        text-align: left;
+    }
+
+    .banner-promotion.countdown-big .sub-text {
+        margin-bottom: var(--spacing-12);
+    }
+
+    .has-fallback-img {
+        height: 617px;
+    }
+}

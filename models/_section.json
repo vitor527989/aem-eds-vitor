@@ -13,6 +13,40 @@
           }
         }
       }
+    },
+    {
+      "title": "Profile section",
+      "id": "profile-section",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "name": "profile-section",
+              "model": "profile-section",
+              "style": "profile-section",
+              "filter": "profile-section"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Column Layout Section",
+      "id": "column-layout-section",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "name": "Column Layout Section",
+              "style": "column-layout-section",
+              "model": "column-layout-section",
+              "filter": "column-layout-section"
+            }
+          }
+        }
+      }
     }
   ],
   "models": [
@@ -25,10 +59,126 @@
           "label": "Style",
           "options": [
             {
-              "name": "Highlight",
-              "value": "highlight"
+              "name": "Background Gradient Tonal Santorini",
+              "value": "bg-gradient-tonal-santorini"
+            },
+            {
+              "name": "Background Gradient Tonal Crete",
+              "value": "bg-gradient-tonal-crete"
+            },
+            {
+              "name": "Background Gradient Tonal Rhodes",
+              "value": "bg-gradient-tonal-rhodes"
+            },
+            {
+              "name": "Background Gradient Tonal Mykonos",
+              "value": "bg-gradient-tonal-mykonos"
+            },
+            {
+              "name": "Background White",
+              "value": "bg-white"
+            },
+            {
+              "name": "Background Stone",
+              "value": "bg-stone"
+            },
+            {
+              "name": "Background Crystal",
+              "value": "bg-crystal"
+            },
+            {
+              "name": "Background Midnight",
+              "value": "bg-midnight"
+            },
+            {
+              "name": "Text left",
+              "value": "txt-left"
+            },
+            {
+              "name": "Text center",
+              "value": "txt-center"
+            },
+            {
+              "name": "Text right",
+              "value": "txt-right"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "profile-section",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "style",
+          "label": "Style",
+          "options": [
+            {
+              "name": "Background Gradient Tonal Santorini",
+              "value": "bg-gradient-tonal-santorini"
+            },
+            {
+              "name": "Background Gradient Tonal Crete",
+              "value": "bg-gradient-tonal-crete"
+            },
+            {
+              "name": "Background Gradient Tonal Rhodes",
+              "value": "bg-gradient-tonal-rhodes"
+            },
+            {
+              "name": "Background Gradient Tonal Mykonos",
+              "value": "bg-gradient-tonal-mykonos"
+            },
+            {
+              "name": "Background White",
+              "value": "bg-white"
+            },
+            {
+              "name": "Background Stone",
+              "value": "bg-stone"
+            },
+            {
+              "name": "Background Crystal",
+              "value": "bg-crystal"
+            },
+            {
+              "name": "Background Midnight",
+              "value": "bg-midnight"
+            },
+            {
+              "name": "Text left",
+              "value": "txt-left"
+            },
+            {
+              "name": "Text center",
+              "value": "txt-center"
+            },
+            {
+              "name": "Text right",
+              "value": "txt-right"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column-layout-section",
+      "fields": [
+        {
+          "component": "text",
+          "name": "style",
+          "label": "Style",
+          "readOnly": true
+        },
+        {
+          "component": "number",
+          "name": "left-content-count",
+          "label": "Component Count Left Section",
+          "description": "Describes the number of components from top to bottom are moved into the left section of the layout component",
+          "value": 1,
+          "numberMin": 1,
+          "numberMax": 5
         }
       ]
     }
@@ -41,10 +191,62 @@
         "image",
         "button",
         "title",
-        "hero",
+        "stage",
         "cards",
         "columns",
-        "fragment"
+        "fragment",
+        "banner-promotion",
+        "list-imagetext",
+        "itinerary-teasers",
+        "teaser-promotion",
+        "media-gallery",
+        "checklist",
+        "collapsable-text",
+        "content-teasers",
+        "spacing",
+        "destination-teaser",
+        "excursion-teasers",
+        "double-teaser",
+        "text-image",
+        "text-image-large",
+        "button-bar",
+        "video",
+        "brochure-teaser",
+        "contact-inline",
+        "itinerary-detail-profile",
+        "iframe-app",
+        "itinerary-detail-steps",
+        "image-teaser"
+      ]
+    },
+    {
+      "id": "profile-section",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title",
+        "fragment",
+        "checklist",
+        "collapsable-text",
+        "excursion-profile",
+        "need-to-know",
+        "spacing"
+      ]
+    },
+    {
+      "id": "column-layout-section",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title",
+        "fragment",
+        "checklist",
+        "collapsable-text",
+        "excursion-profile",
+        "need-to-know",
+        "spacing"
       ]
     }
   ]

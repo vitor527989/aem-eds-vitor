@@ -1,0 +1,171 @@
+.itinerary-detail-profile-wrapper.itinerary-detail-profile-wrapper {
+    /* duplicate class selector for increasing weight on the specificity */
+
+    /* remove outer helpers, so stage can be full-width */
+    padding: 0;
+    margin: 0;
+    max-width: none;
+}
+
+.itinerary-detail-profile h1,
+.itinerary-detail-profile h2,
+.itinerary-detail-profile ul,
+.itinerary-detail-profile .button {
+    margin: 0;
+}
+
+.itinerary-detail-profile .stage {
+    position: relative;
+    aspect-ratio: 4/3;
+}
+
+.itinerary-detail-profile .stage img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.itinerary-detail-profile .tag {
+    position: absolute;
+    border-radius: var(--radius-md);
+    color: var(--color-text-inverted);
+    background-color: var(--color-surface-inverted);
+    padding: var(--spacing-4) var(--spacing-12);
+}
+
+.itinerary-detail-profile .tag.desktop-only {
+    display: none;
+}
+
+.itinerary-detail-profile .stage .tag {
+    top: var(--spacing-12);
+    left: var(--spacing-12);
+}
+
+.itinerary-detail-profile .content {
+    background-color: var(--color-surface-primary);
+    padding-top: var(--spacing-24);
+    padding-bottom: var(--spacing-24);
+}
+
+.itinerary-detail-profile .content,
+.itinerary-detail-profile .content .center,
+.itinerary-detail-profile .content .center .center-left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+}
+
+.itinerary-detail-profile .overline {
+    color: var(--color-text-subtitle);
+    margin: 0 0 var(--spacing-12) 0;
+}
+
+.itinerary-detail-profile .facts {
+    list-style-type: none;
+    padding: 0;
+
+    --icon-height: 24px;
+    --text-line-height: 20px;
+}
+
+.itinerary-detail-profile .facts li {
+    background-repeat: no-repeat;
+    padding: calc((var(--icon-height) - var(--text-line-height)) / 2) 0 0
+        calc(var(--spacing-24) + var(--spacing-8));
+}
+
+.itinerary-detail-profile .facts li + li {
+    margin-top: var(--spacing-16);
+}
+
+.itinerary-detail-profile .price {
+    display: flex;
+    gap: var(--spacing-8);
+    align-items: center;
+}
+
+.itinerary-detail-profile .buttons {
+    margin-top: var(--spacing-24);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-12);
+}
+
+.itinerary-detail-profile .buttons .button-wrapper {
+    display: flex;
+    gap: var(--spacing-12);
+    align-items: flex-start;
+}
+
+.itinerary-detail-profile .button-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-24);
+    background-color: var(--color-surface-primary);
+    box-shadow: 0 4px 15px 0 rgb(0 0 0 / 30%);
+}
+
+.itinerary-detail-profile .button-bar .button {
+    display: block;
+}
+
+.itinerary-detail-profile .dialog .top-content {
+    text-align: center;
+    margin: var(--spacing-64) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+}
+
+@media (width >= 1024px) {
+    .itinerary-detail-profile .tag.desktop-only {
+        display: block;
+        top: var(--spacing-32);
+        right: var(--spacing-32);
+    }
+
+    .itinerary-detail-profile .tag.mobile-only {
+        display: none;
+    }
+
+    .itinerary-detail-profile .stage,
+    .itinerary-detail-profile .stage img {
+        aspect-ratio: 21/9;
+    }
+
+    .itinerary-detail-profile .content {
+        position: relative;
+        top: -132px;
+        border-radius: var(--radius-md);
+        padding: var(--spacing-32);
+    }
+
+    .itinerary-detail-profile .content .center {
+        flex-direction: row;
+        gap: var(--spacing-32);
+    }
+
+    .itinerary-detail-profile .content .center > * {
+        flex: 1 0 0;
+    }
+
+    .itinerary-detail-profile .overline {
+        margin-bottom: var(--spacing-8);
+    }
+
+    .itinerary-detail-profile .button-bar {
+        position: static;
+        padding: 0;
+        box-shadow: none;
+        width: calc(100% / 3 - var(--spacing-32) / 2);
+    }
+
+    .itinerary-detail-profile .dialog .top-content {
+        text-align: left;
+        margin: 0 0 var(--spacing-32) 0;
+    }
+}

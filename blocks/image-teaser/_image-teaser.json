@@ -1,0 +1,139 @@
+{
+  "definitions": [
+    {
+      "title": "Image Teaser",
+      "id": "image-teaser",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Image Teaser",
+              "model": "image-teaser",
+              "filter": "image-teaser"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Image Teaser Item",
+      "id": "image-teaser-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Image Teaser Item",
+              "model": "image-teaser-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "image-teaser",
+      "fields": [
+        {
+          "component": "aem-content",
+          "name": "button_link",
+          "label": "Link",
+          "validation": {
+            "rootPath": "/content/celestyal"
+          }
+        },
+        {
+          "component": "text",
+          "name": "button_label",
+          "label": "Link Label"
+        }
+      ]
+    },
+    {
+      "id": "image-teaser-item",
+      "fields": [
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "tags",
+          "label": "List of tags",
+          "description": "Add each Tag as an item of the list in Richtext editor"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image_ref",
+          "label": "Image",
+          "multi": false,
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "image_alt",
+          "label": "Image Alt",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "headline",
+          "label": "Headline",
+          "required": true
+        },
+        {
+          "component": "text",
+          "name": "text",
+          "label": "Text"
+        },
+        {
+          "component": "aem-content",
+          "name": "item_button_link",
+          "label": "Button Link",
+          "validation": {
+            "rootPath": "/content/celestyal"
+          }
+        },
+        {
+          "component": "text",
+          "name": "item_button_label",
+          "label": "Button Label"
+        },
+        {
+          "component": "select",
+          "name": "color",
+          "label": "Color variation",
+          "options": [
+            {
+              "name": "White",
+              "value": "white"
+            },
+            {
+              "name": "Stone",
+              "value": "stone"
+            },
+            {
+              "name": "Aqua",
+              "value": "aqua"
+            },
+            {
+              "name": "Cypress",
+              "value": "cypress"
+            },
+            {
+              "name": "Lemon",
+              "value": "lemon"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "image-teaser",
+      "components": ["image-teaser-item"]
+    }
+  ]
+}

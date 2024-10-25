@@ -1,0 +1,68 @@
+.excursion-profile p,
+.excursion-profile h1,
+.excursion-profile ul {
+    margin: 0;
+    padding: 0;
+}
+
+.excursion-profile {
+    /* optimize CLS */
+    min-height: 250px;
+}
+
+.excursion-profile .overline {
+    color: var(--color-text-subtitle);
+    margin-bottom: var(--spacing-8);
+}
+
+.excursion-profile .heading {
+    margin-bottom: var(--spacing-24);
+}
+
+.excursion-profile .tags {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-24);
+    display: flex;
+    gap: var(--spacing-8);
+    flex-flow: row wrap;
+}
+
+.excursion-profile .tags li {
+    background: var(--color-surface-inverted);
+    color: var(--color-text-inverted);
+    padding: var(--spacing-4) var(--spacing-12);
+    border-radius: var(--radius-sm);
+}
+
+.excursion-profile .facts {
+    list-style: none;
+
+    --icon-height: 24px;
+    --line-height: 20px;
+}
+
+.excursion-profile .facts li {
+    background-repeat: no-repeat;
+    min-height: var(--icon-height);
+    padding-left: calc(var(--spacing-24) + var(--spacing-8));
+    padding-top: calc((var(--icon-height) - var(--line-height)) / 2);
+}
+
+.excursion-profile .facts li + li {
+    margin-top: var(--spacing-16);
+}
+
+@media (width >= 1024px) {
+    .excursion-profile {
+        min-height: 0;
+    }
+
+    .excursion-profile .overline {
+        margin-bottom: var(--spacing-16);
+    }
+
+    .excursion-profile .heading {
+        margin-bottom: var(--spacing-24);
+    }
+}

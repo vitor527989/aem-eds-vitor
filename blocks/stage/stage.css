@@ -1,0 +1,52 @@
+.stage-container .stage-wrapper {
+    max-width: none;
+    padding: 0;
+}
+
+.stage {
+    position: relative;
+    display: flex;
+    padding: var(--spacing-24) 0;
+    min-height: 476px;
+}
+
+.stage .stage-title {
+    color: var(--color-white-100);
+    margin-bottom: var(--spacing-24);
+}
+
+.stage-text-wrapper {
+    position: absolute;
+    bottom: var(--spacing-24);
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.stage picture,
+.stage-video-wrapper {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.stage-video-wrapper {
+    background-color: #000;
+}
+
+.stage-video-wrapper .video-default {
+    aspect-ratio: unset;
+}
+
+.stage img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+@media (width >= 768px) {
+    .stage-text-wrapper {
+        bottom: var(--spacing-40);
+    }
+}

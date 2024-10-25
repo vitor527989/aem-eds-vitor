@@ -2,7 +2,9 @@
   {
     "id": "main",
     "components": [
-      "section"
+      "section",
+      "profile-section",
+      "column-layout-section"
     ]
   },
   {
@@ -12,19 +14,74 @@
       "image",
       "button",
       "title",
-      "hero",
+      "stage",
       "cards",
       "columns",
       "fragment",
+      "banner-promotion",
+      "list-imagetext",
+      "itinerary-teasers",
+      "teaser-promotion",
+      "media-gallery",
+      "checklist",
+      "collapsable-text",
+      "content-teasers",
+      "spacing",
+      "destination-teaser",
+      "excursion-teasers",
+      "double-teaser",
+      "text-image",
+      "text-image-large",
+      "button-bar",
       "video",
-      "tabs",
-      "breadcrumbs"
+      "brochure-teaser",
+      "contact-inline",
+      "itinerary-detail-profile",
+      "iframe-app",
+      "itinerary-detail-steps",
+      "image-teaser"
+    ]
+  },
+  {
+    "id": "profile-section",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "fragment",
+      "checklist",
+      "collapsable-text",
+      "excursion-profile",
+      "need-to-know",
+      "spacing"
+    ]
+  },
+  {
+    "id": "column-layout-section",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "fragment",
+      "checklist",
+      "collapsable-text",
+      "excursion-profile",
+      "need-to-know",
+      "spacing"
     ]
   },
   {
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "checklist",
+    "components": [
+      "checklist-item"
     ]
   },
   {
@@ -43,10 +100,39 @@
     ]
   },
   {
-    "id": "tabs",
+    "id": "content-teasers",
     "components": [
-      "tabs-item",
-      "tabs-content-fragment"
+      "content-teasers-item"
+    ]
+  },
+  {
+    "id": "double-teaser",
+    "components": [
+      "double-teaser-item"
+    ]
+  },
+  {
+    "id": "highlights",
+    "components": [
+      "highlight"
+    ]
+  },
+  {
+    "id": "image-teaser",
+    "components": [
+      "image-teaser-item"
+    ]
+  },
+  {
+    "id": "list-imagetext",
+    "components": [
+      "list-imagetext-item"
+    ]
+  },
+  {
+    "id": "media-gallery",
+    "components": [
+      "media-gallery-item"
     ]
   }
 ]

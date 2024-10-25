@@ -1,0 +1,79 @@
+{
+  "definitions": [
+    {
+      "title": "Itinerary Detail Steps",
+      "id": "itinerary-detail-steps",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Itinerary Detail Steps",
+              "model": "itinerary-detail-steps"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "itinerary-detail-steps",
+      "fields": [
+        {
+          "component": "aem-content",
+          "name": "itinerary-master_link",
+          "label": "Link to Itinerary Master",
+          "validation": {
+            "rootPath": "/content/celestyal"
+          }
+        },
+        {
+          "component": "text",
+          "name": "itinerary-master_label",
+          "label": "Itinerary Master Label"
+        },
+        {
+          "component": "text",
+          "name": "title",
+          "label": "Text"
+        },
+        {
+          "component": "aem-content-fragment",
+          "name": "content_fragment",
+          "label": "Content fragment",
+          "validation": {
+            "rootPath": "/content/dam/celestyal"
+          }
+        },
+        {
+          "component": "aem-content",
+          "name": "itinerary-view_link",
+          "label": "Link to View Itinerary",
+          "validation": {
+            "rootPath": "/content/celestyal"
+          }
+        },
+        {
+          "component": "text",
+          "name": "itinerary-view_label",
+          "label": "View Itinerary Label"
+        },
+        {
+          "component": "aem-content",
+          "name": "link-arrow_link",
+          "label": "Link for Arrow button",
+          "validation": {
+            "rootPath": "/content/celestyal"
+          }
+        },
+        {
+          "component": "text",
+          "name": "link-arrow_label",
+          "label": "Arrow Button Label"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

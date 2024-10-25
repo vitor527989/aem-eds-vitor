@@ -1,0 +1,11 @@
+.checklist p {
+    margin: 0;
+}
+
+.checklist li {
+    padding-left: var(--spacing-8);
+}
+
+.checklist li + li {
+    margin-top: var(--spacing-12);
+}

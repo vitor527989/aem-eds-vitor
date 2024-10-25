@@ -1,0 +1,41 @@
+.text-image {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+}
+
+.text-image .image {
+    aspect-ratio: 4/3;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
+.text-image .text :first-child {
+    margin-top: 0;
+}
+
+.text-image .text :last-child {
+    margin-bottom: 0;
+}
+
+@media (width >= 768px) {
+    .text-image {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-32);
+    }
+
+    .text-image .image {
+        width: 0;
+        aspect-ratio: 16 / 10;
+    }
+
+    .text-image.reverse .image {
+        order: 9999;
+    }
+
+    .text-image * {
+        flex: 1;
+    }
+}

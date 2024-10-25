@@ -1,0 +1,93 @@
+{
+  "definitions": [
+    {
+      "title": "Text Image Large",
+      "id": "text-image-large",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Text Image Large",
+              "model": "text-image-large",
+              "imagePlacement": "left"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "text-image-large",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image_ref",
+          "label": "Image",
+          "multi": false,
+          "required": true
+        },
+        {
+          "component": "text",
+          "name": "image_alt",
+          "label": "Image Alt"
+        },
+        {
+          "component": "text",
+          "name": "headline",
+          "label": "Headline"
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "label": "Text",
+          "required": true
+        },
+        {
+          "component": "select",
+          "name": "imagePlacement",
+          "label": "Image Placement",
+          "options": [
+            {
+              "name": "left",
+              "value": "left"
+            },
+            {
+              "name": "right",
+              "value": "right"
+            }
+          ]
+        },
+        {
+          "component": "aem-content",
+          "name": "primary_button_link",
+          "label": "Primary Link",
+          "validation": {
+            "rootPath": "/content/celestyal"
+          }
+        },
+        {
+          "component": "text",
+          "name": "primary_button_label",
+          "label": "Primary Link Label"
+        },
+        {
+          "component": "aem-content",
+          "name": "secondary_button_link",
+          "label": "Secondary Link",
+          "validation": {
+            "rootPath": "/content/celestyal"
+          }
+        },
+        {
+          "component": "text",
+          "name": "secondary_button_label",
+          "label": "Secondary Link Label"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

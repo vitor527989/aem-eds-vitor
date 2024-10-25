@@ -1,0 +1,79 @@
+:root {
+    --contact-icon-size: 48px;
+    --checkbox-size: 20px;
+}
+
+.contact-inline-container .default-content-wrapper {
+    text-align: center;
+    margin-bottom: var(--spacing-64);
+}
+
+.contact-inline-container .default-content-wrapper h2 {
+    margin: 0 0 var(--spacing-24);
+    font-size: var(--font-size-4xl);
+    line-height: var(--line-height-3xl);
+}
+
+.contact-inline-container .default-content-wrapper p {
+    margin: 0;
+    font-size: var(--font-size-md);
+}
+
+.contact-inline {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--spacing-24);
+}
+
+.contact-inline .contact-card {
+    background-color: var(--color-white-100);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-32);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.contact-inline .icon {
+    width: var(--contact-icon-size);
+    height: var(--contact-icon-size);
+}
+
+.contact-inline .phone-number {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+}
+
+.contact-inline .callback-checkbox {
+    margin-top: var(--spacing-32);
+    font-size: var(--font-size-xs);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.contact-inline .callback-checkbox input {
+    height: var(--checkbox-size);
+    width: var(--checkbox-size);
+    margin: 0 var(--spacing-8) 0;
+}
+
+.contact-inline .contact-us-button {
+    margin: auto 0 0;
+}
+
+@media (width >= 1024px) {
+    .contact-inline {
+        flex-direction: row;
+        gap: var(--spacing-32);
+        align-items: stretch;
+    }
+
+    .contact-inline .contact-card {
+        padding: var(--spacing-32) var(--spacing-96);
+    }
+}

@@ -1,0 +1,33 @@
+:root {
+    --need-icon-size: 21px;
+}
+
+.need-to-know-title {
+    margin-bottom: var(--spacing-12);
+}
+
+.need-to-know-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+}
+
+.need-to-know-item .icon {
+    background: var(--color-midnight-900);
+    mask-size: var(--need-icon-size) var(--need-icon-size);
+    mask-repeat: no-repeat;
+}
+
+.need-to-know-item .no-icon {
+    width: var(--need-icon-size);
+}
+
+.need-to-know-item p {
+    width: calc(100% - (var(--need-icon-size) + var(--spacing-8)));
+}
+
+@media (width >= 768px) {
+    .need-to-know-title {
+        margin-bottom: var(--spacing-24);
+    }
+}

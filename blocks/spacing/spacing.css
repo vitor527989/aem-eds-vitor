@@ -1,0 +1,33 @@
+.spacing-xl {
+    height: 94px;
+}
+
+.spacing-lg {
+    height: 64px;
+}
+
+.spacing-md {
+    height: 32px;
+}
+
+.spacing-sm {
+    height: 18px;
+}
+
+@media (width >= 1024px) {
+    .spacing-xl {
+        height: 120px;
+    }
+
+    .spacing-lg {
+        height: 64px;
+    }
+
+    .spacing-md {
+        height: 32px;
+    }
+
+    .spacing-sm {
+        height: 24px;
+    }
+}

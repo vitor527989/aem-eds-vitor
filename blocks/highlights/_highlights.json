@@ -1,0 +1,68 @@
+{
+  "definitions": [
+    {
+      "title": "Highlights",
+      "id": "highlights",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/highlights",
+            "template": {
+              "name": "Highlights",
+              "filter": "highlights"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Highlight",
+      "id": "highlight",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Highlight",
+              "model": "highlight"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "highlight",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "headline",
+          "value": "",
+          "label": "Headline",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "highlights",
+      "components": ["highlight"]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "definitions": [
+    {
+      "title": "Teaser promotion",
+      "id": "teaser-promotion",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Teaser promotion",
+              "model": "teaser-promotion"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "teaser-promotion",
+      "fields": [
+        {
+          "component": "select",
+          "name": "color",
+          "label": "Color variation",
+          "options": [
+            {
+              "name": "Santorini",
+              "value": "santorini"
+            },
+            {
+              "name": "Crete",
+              "value": "crete"
+            },
+            {
+              "name": "Rhodes",
+              "value": "rhodes"
+            },
+            {
+              "name": "Mykonos",
+              "value": "mykonos"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "shape",
+          "value": "chora",
+          "label": "Shape variation",
+          "options": [
+            {
+              "name": "Chora",
+              "value": "chora"
+            },
+            {
+              "name": "Oia",
+              "value": "oia"
+            }
+          ]
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Alt",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "title",
+          "value": "",
+          "label": "Title",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "value": "",
+          "label": "Description",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "name": "button_link",
+          "label": "Link",
+          "validation": {
+            "rootPath": "/content/celestyal"
+          }
+        },
+        {
+          "component": "text",
+          "name": "button_label",
+          "label": "Link Label"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

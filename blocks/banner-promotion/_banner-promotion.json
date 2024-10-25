@@ -1,0 +1,172 @@
+{
+  "definitions": [
+    {
+      "title": "Banner Promotion",
+      "id": "banner-promotion",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Banner Promotion",
+              "model": "banner-promotion"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "banner-promotion",
+      "fields": [
+        {
+          "component": "select",
+          "name": "banner-type",
+          "label": "Type",
+          "options": [
+            {
+              "name": "default",
+              "value": ""
+            },
+            {
+              "name": "Countdown",
+              "value": "countdown"
+            },
+            {
+              "name": "Countdown Big",
+              "value": "countdown-big"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "layout",
+          "label": "Layout",
+          "options": [
+            {
+              "name": "default",
+              "value": ""
+            },
+            {
+              "name": "Full width",
+              "value": "fullwidth"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "color",
+          "label": "Background color",
+          "options": [
+            {
+              "name": "Rhodes",
+              "value": "rhodes"
+            },
+            {
+              "name": "Tertiary",
+              "value": "tertiary"
+            },
+            {
+              "name": "Cypress",
+              "value": "cypress"
+            },
+            {
+              "name": "Blossom",
+              "value": "blossom"
+            },
+            {
+              "name": "Lemon",
+              "value": "lemon"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "text",
+          "label": "Text"
+        },
+        {
+          "component": "aem-content",
+          "name": "button_link",
+          "label": "Link",
+          "validation": {
+            "rootPath": "/content/celestyal"
+          }
+        },
+        {
+          "component": "text",
+          "name": "button_label",
+          "label": "Link Label"
+        },
+        {
+          "component": "date-time",
+          "name": "countdown-target",
+          "label": "Countdown DateTime",
+          "valueType": "date-time",
+          "placeholder": "YYYY-MM-DD HH:mm:ss",
+          "condition": {
+            "or": [
+              {
+                "==": [
+                  {
+                    "var": "banner-type"
+                  },
+                  "countdown"
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "banner-type"
+                  },
+                  "countdown-big"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "subtext",
+          "label": "Sub Text",
+          "condition": {
+            "==": [
+              {
+                "var": "banner-type"
+              },
+              "countdown-big"
+            ]
+          }
+        },
+        {
+          "component": "reference",
+          "name": "image",
+          "label": "Fallback image",
+          "condition": {
+            "==": [
+              {
+                "var": "banner-type"
+              },
+              "countdown-big"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "imageAlt",
+          "label": "Fallback image description",
+          "condition": {
+            "==": [
+              {
+                "var": "banner-type"
+              },
+              "countdown-big"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

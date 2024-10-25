@@ -1,0 +1,92 @@
+.collapsable-text .text,
+.collapsable-text .expanded-text {
+    text-align: left;
+}
+
+.collapsable-text .button ~ .expanded-text {
+    display: flex;
+    overflow: hidden;
+}
+
+.collapsable {
+    margin-bottom: -2000px;
+    visibility: hidden;
+    max-height: 0;
+    width: 100%;
+    transition:
+        margin-bottom 0.3s cubic-bezier(1, 0, 1, 1),
+        visibility 0s 0.3s,
+        max-height 0s 0.3s;
+}
+
+.collapsable-text .button.expanded ~ .expanded-text .collapsable {
+    transition: margin-bottom 0.3s cubic-bezier(0, 0, 0, 1);
+    margin-bottom: 0;
+    visibility: visible;
+    max-height: 10000px;
+}
+
+.collapsable-text > .button {
+    display: inline-flex;
+}
+
+.collapsable-text > .button::after {
+    content: "";
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    margin-left: var(--spacing-8);
+    mask-image: url("../../icons/arrow-down.svg");
+    mask-size: 24px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--color-midnight-900);
+    transform: rotate(0deg);
+    transition: transform ease-out 0.2s;
+}
+
+.collapsable-text > .button.expanded::after {
+    transform: rotate(180deg);
+    transition: transform ease-in 0.2s;
+}
+
+.collapsable-text .collapsable :is(h2, h3, h4, h5, h6) {
+    font-weight: 700;
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-sm);
+}
+
+.collapsable-text--grid .collapsable p,
+.collapsable-text--grid .collapsable li {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-right: var(--spacing-4);
+    width: calc(100% * 0.5 - 2 * var(--spacing-4)); /* 1/2 size of the screen */
+}
+
+@media (width < 768px) {
+    .collapsable-text--grid .collapsable p:nth-of-type(2n + 2),
+    .collapsable-text--grid .collapsable li:nth-of-type(2n + 2) {
+        margin-right: 0;
+    }
+}
+
+@media (width >= 768px) {
+    .collapsable-text--grid .collapsable p,
+    .collapsable-text--grid .collapsable li {
+        margin-right: var(--spacing-16);
+        width: calc(
+            100% * 0.25 - var(--spacing-16)
+        ); /* 1/4 size of the screen */
+    }
+
+    .collapsable-text--grid .collapsable p:nth-of-type(4n + 4),
+    .collapsable-text--grid .collapsable li:nth-of-type(4n + 4) {
+        margin-right: 0;
+    }
+
+    .collapsable-text--grid .collapsable :is(h2, h3, h4, h5, h6) {
+        font-size: var(--font-size-xl);
+        line-height: var(--line-height-lg);
+    }
+}

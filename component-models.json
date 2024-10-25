@@ -6,6 +6,9 @@
         "component": "reference",
         "name": "image",
         "label": "Image",
+        "validation": {
+          "rootPath": "/content/dam/celestyal"
+        },
         "multi": false
       },
       {
@@ -62,7 +65,10 @@
       {
         "component": "aem-content",
         "name": "link",
-        "label": "Link"
+        "label": "Link",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
       },
       {
         "component": "text",
@@ -104,8 +110,439 @@
         "label": "Style",
         "options": [
           {
-            "name": "Highlight",
-            "value": "highlight"
+            "name": "Background Gradient Tonal Santorini",
+            "value": "bg-gradient-tonal-santorini"
+          },
+          {
+            "name": "Background Gradient Tonal Crete",
+            "value": "bg-gradient-tonal-crete"
+          },
+          {
+            "name": "Background Gradient Tonal Rhodes",
+            "value": "bg-gradient-tonal-rhodes"
+          },
+          {
+            "name": "Background Gradient Tonal Mykonos",
+            "value": "bg-gradient-tonal-mykonos"
+          },
+          {
+            "name": "Background White",
+            "value": "bg-white"
+          },
+          {
+            "name": "Background Stone",
+            "value": "bg-stone"
+          },
+          {
+            "name": "Background Crystal",
+            "value": "bg-crystal"
+          },
+          {
+            "name": "Background Midnight",
+            "value": "bg-midnight"
+          },
+          {
+            "name": "Text left",
+            "value": "txt-left"
+          },
+          {
+            "name": "Text center",
+            "value": "txt-center"
+          },
+          {
+            "name": "Text right",
+            "value": "txt-right"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "profile-section",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Background Gradient Tonal Santorini",
+            "value": "bg-gradient-tonal-santorini"
+          },
+          {
+            "name": "Background Gradient Tonal Crete",
+            "value": "bg-gradient-tonal-crete"
+          },
+          {
+            "name": "Background Gradient Tonal Rhodes",
+            "value": "bg-gradient-tonal-rhodes"
+          },
+          {
+            "name": "Background Gradient Tonal Mykonos",
+            "value": "bg-gradient-tonal-mykonos"
+          },
+          {
+            "name": "Background White",
+            "value": "bg-white"
+          },
+          {
+            "name": "Background Stone",
+            "value": "bg-stone"
+          },
+          {
+            "name": "Background Crystal",
+            "value": "bg-crystal"
+          },
+          {
+            "name": "Background Midnight",
+            "value": "bg-midnight"
+          },
+          {
+            "name": "Text left",
+            "value": "txt-left"
+          },
+          {
+            "name": "Text center",
+            "value": "txt-center"
+          },
+          {
+            "name": "Text right",
+            "value": "txt-right"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "column-layout-section",
+    "fields": [
+      {
+        "component": "text",
+        "name": "style",
+        "label": "Style",
+        "readOnly": true
+      },
+      {
+        "component": "number",
+        "name": "left-content-count",
+        "label": "Component Count Left Section",
+        "description": "Describes the number of components from top to bottom are moved into the left section of the layout component",
+        "value": 1,
+        "numberMin": 1,
+        "numberMax": 5
+      }
+    ]
+  },
+  {
+    "id": "banner-promotion",
+    "fields": [
+      {
+        "component": "select",
+        "name": "banner-type",
+        "label": "Type",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "Countdown",
+            "value": "countdown"
+          },
+          {
+            "name": "Countdown Big",
+            "value": "countdown-big"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "layout",
+        "label": "Layout",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "Full width",
+            "value": "fullwidth"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "color",
+        "label": "Background color",
+        "options": [
+          {
+            "name": "Rhodes",
+            "value": "rhodes"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Cypress",
+            "value": "cypress"
+          },
+          {
+            "name": "Blossom",
+            "value": "blossom"
+          },
+          {
+            "name": "Lemon",
+            "value": "lemon"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "text",
+        "label": "Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "button_link",
+        "label": "Link",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "button_label",
+        "label": "Link Label"
+      },
+      {
+        "component": "date-time",
+        "name": "countdown-target",
+        "label": "Countdown DateTime",
+        "valueType": "date-time",
+        "placeholder": "YYYY-MM-DD HH:mm:ss",
+        "condition": {
+          "or": [
+            {
+              "==": [
+                {
+                  "var": "banner-type"
+                },
+                "countdown"
+              ]
+            },
+            {
+              "==": [
+                {
+                  "var": "banner-type"
+                },
+                "countdown-big"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "component": "text",
+        "name": "subtext",
+        "label": "Sub Text",
+        "condition": {
+          "==": [
+            {
+              "var": "banner-type"
+            },
+            "countdown-big"
+          ]
+        }
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Fallback image",
+        "condition": {
+          "==": [
+            {
+              "var": "banner-type"
+            },
+            "countdown-big"
+          ]
+        }
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Fallback image description",
+        "condition": {
+          "==": [
+            {
+              "var": "banner-type"
+            },
+            "countdown-big"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "breadcrumbs",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "reference",
+        "label": "Reference"
+      }
+    ]
+  },
+  {
+    "id": "brochure-teaser",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image_ref",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "image_alt",
+        "label": "Image Alt",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "headline",
+        "label": "Headline"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "button_link",
+        "label": "Link",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "button_label",
+        "label": "Link Label"
+      },
+      {
+        "component": "select",
+        "name": "button-type",
+        "label": "Button Type",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "button-bar",
+    "fields": [
+      {
+        "component": "select",
+        "name": "background",
+        "label": "Background",
+        "options": [
+          {
+            "name": "Background White",
+            "value": "bg-white"
+          },
+          {
+            "name": "Background Stone",
+            "value": "bg-stone"
+          },
+          {
+            "name": "Background Crystal",
+            "value": "bg-crystal"
+          },
+          {
+            "name": "Background Midnight",
+            "value": "bg-midnight"
+          }
+        ]
+      },
+      {
+        "component": "aem-content",
+        "name": "first_button_link",
+        "label": "First Button Link",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "first_button_label",
+        "label": "First Button Label"
+      },
+      {
+        "component": "select",
+        "name": "first_button_type",
+        "label": "First Button Type",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          }
+        ]
+      },
+      {
+        "component": "aem-content",
+        "name": "second_button_link",
+        "label": "Second Button Link",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "second_button_label",
+        "label": "Second Button Label"
+      },
+      {
+        "component": "select",
+        "name": "second_button_type",
+        "label": "Second Button Type",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
           }
         ]
       }
@@ -131,6 +568,74 @@
     ]
   },
   {
+    "id": "checklist",
+    "fields": [
+      {
+        "component": "select",
+        "name": "list-icon",
+        "label": "List Icon",
+        "options": [
+          {
+            "name": "Check",
+            "value": "check"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "checklist-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "text",
+        "label": "Text"
+      }
+    ]
+  },
+  {
+    "id": "collapsable-text",
+    "fields": [
+      {
+        "component": "select",
+        "name": "orientation",
+        "label": "Text orientation",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "Grid",
+            "value": "grid"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text"
+      },
+      {
+        "component": "richtext",
+        "name": "expanded-text",
+        "label": "Expanded Text"
+      },
+      {
+        "component": "text",
+        "name": "expand-button-label",
+        "label": "Expand Button Label",
+        "value": "Show More"
+      },
+      {
+        "component": "text",
+        "name": "collapse-button-label",
+        "label": "Collapse Button Label",
+        "value": "Show Less"
+      }
+    ]
+  },
+  {
     "id": "columns",
     "fields": [
       {
@@ -150,12 +655,258 @@
     ]
   },
   {
+    "id": "contact-inline",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text-phone",
+        "label": "Text Phone"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "phone-number",
+        "label": "Phone Number"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "callback-label",
+        "label": "Callback Checkbox Label",
+        "hidden": "true"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text-contact-form",
+        "label": "Text Contact Form"
+      },
+      {
+        "component": "aem-content",
+        "name": "button_link",
+        "label": "Link Contact Form",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "button_label",
+        "label": "Link Label"
+      }
+    ]
+  },
+  {
+    "id": "content-teasers",
+    "fields": [
+      {
+        "component": "text",
+        "name": "headline",
+        "label": "Headline"
+      },
+      {
+        "component": "text",
+        "name": "text",
+        "label": "Text"
+      },
+      {
+        "component": "select",
+        "name": "size",
+        "label": "Size",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "tall",
+            "value": "tall"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "content-teasers-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false,
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "headline",
+        "label": "Headline",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "text",
+        "label": "Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "button_link",
+        "label": "Link",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "button_label",
+        "label": "Link Label"
+      }
+    ]
+  },
+  {
+    "id": "destination-teaser",
+    "fields": [
+      {
+        "component": "text",
+        "name": "heading",
+        "label": "Heading"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "name": "image_alt",
+        "label": "Image label"
+      },
+      {
+        "component": "aem-content",
+        "name": "button_link",
+        "label": "Link",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "button_label",
+        "label": "Link Label"
+      },
+      {
+        "component": "aem-content",
+        "name": "button-outlined_link",
+        "label": "Link",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "button-outlined_label",
+        "label": "Link Label"
+      }
+    ]
+  },
+  {
+    "id": "double-teaser",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description"
+      }
+    ]
+  },
+  {
+    "id": "double-teaser-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Image description"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "aem-content",
+        "name": "button_link",
+        "label": "Link",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "button_label",
+        "label": "Link Label"
+      }
+    ]
+  },
+  {
+    "id": "excursion-profile",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content-fragment",
+        "name": "content_fragment",
+        "label": "Content fragment",
+        "validation": {
+          "rootPath": "/content/dam/celestyal"
+        }
+      }
+    ]
+  },
+  {
+    "id": "excursion-teasers",
+    "fields": [
+      {
+        "component": "aem-tag",
+        "name": "ref for excursions",
+        "label": "Reference for Excursions List",
+        "rootPath": "/content/cq:tags/celestyal",
+        "multi": false
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
         "component": "aem-content",
         "name": "reference",
-        "label": "Reference"
+        "label": "Reference",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
       }
     ]
   },
@@ -186,24 +937,21 @@
     ]
   },
   {
-    "id": "video",
+    "id": "highlight",
     "fields": [
       {
-        "component": "aem-content",
-        "name": "reference",
-        "label": "Reference"
-      }
-    ]
-  },
-  {
-    "id": "tabs-item",
-    "fields": [
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
       {
         "component": "text",
-        "valueType": "string",
-        "name": "tabName",
+        "name": "headline",
         "value": "",
-        "label": "Tab Name"
+        "label": "Headline",
+        "valueType": "string"
       },
       {
         "component": "richtext",
@@ -215,30 +963,854 @@
     ]
   },
   {
-    "id": "tabs-content-fragment",
+    "id": "iframe-app",
     "fields": [
       {
         "component": "text",
         "valueType": "string",
-        "name": "tabName",
+        "name": "iframeUrl",
         "value": "",
-        "label": "Tab Name"
+        "label": "iFrame URL",
+        "description": "Please provide a URL to an iFrame app."
+      }
+    ]
+  },
+  {
+    "id": "image-teaser",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "button_link",
+        "label": "Link",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "button_label",
+        "label": "Link Label"
+      }
+    ]
+  },
+  {
+    "id": "image-teaser-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "tags",
+        "label": "List of tags",
+        "description": "Add each Tag as an item of the list in Richtext editor"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image_ref",
+        "label": "Image",
+        "multi": false,
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "image_alt",
+        "label": "Image Alt",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "headline",
+        "label": "Headline",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "text",
+        "label": "Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "item_button_link",
+        "label": "Button Link",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "item_button_label",
+        "label": "Button Label"
+      },
+      {
+        "component": "select",
+        "name": "color",
+        "label": "Color variation",
+        "options": [
+          {
+            "name": "White",
+            "value": "white"
+          },
+          {
+            "name": "Stone",
+            "value": "stone"
+          },
+          {
+            "name": "Aqua",
+            "value": "aqua"
+          },
+          {
+            "name": "Cypress",
+            "value": "cypress"
+          },
+          {
+            "name": "Lemon",
+            "value": "lemon"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "itinerary-detail-profile",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description"
       },
       {
         "component": "aem-content-fragment",
-        "name": "picker",
-        "label": "Content Fragment Picker",
+        "name": "content_fragment",
+        "label": "Content fragment",
+        "validation": {
+          "rootPath": "/content/dam/celestyal"
+        }
+      },
+      {
+        "component": "aem-content",
+        "name": "popup-content",
+        "label": "Popup Content"
+      },
+      {
+        "component": "container",
+        "label": "Popup Alternative Start Ports",
+        "name": "asp-container",
+        "collapsible": true,
+        "fields": [
+          {
+            "component": "text",
+            "label": "Headline",
+            "name": "asp-headline"
+          },
+          {
+            "component": "richtext",
+            "label": "Text (Single)",
+            "name": "asp-text-single"
+          },
+          {
+            "component": "richtext",
+            "label": "Text (Multiple)",
+            "name": "asp-text-multiple"
+          }
+        ]
+      },
+      {
+        "component": "container",
+        "label": "Popup Combinable Itinerary",
+        "name": "ci-container",
+        "collapsible": true,
+        "fields": [
+          {
+            "component": "text",
+            "label": "Headline",
+            "name": "ci-headline"
+          },
+          {
+            "component": "richtext",
+            "label": "Text",
+            "name": "ci-text"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "itinerary-detail-steps",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "itinerary-master_link",
+        "label": "Link to Itinerary Master",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "itinerary-master_label",
+        "label": "Itinerary Master Label"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Text"
+      },
+      {
+        "component": "aem-content-fragment",
+        "name": "content_fragment",
+        "label": "Content fragment",
+        "validation": {
+          "rootPath": "/content/dam/celestyal"
+        }
+      },
+      {
+        "component": "aem-content",
+        "name": "itinerary-view_link",
+        "label": "Link to View Itinerary",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "itinerary-view_label",
+        "label": "View Itinerary Label"
+      },
+      {
+        "component": "aem-content",
+        "name": "link-arrow_link",
+        "label": "Link for Arrow button",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "link-arrow_label",
+        "label": "Arrow Button Label"
+      }
+    ]
+  },
+  {
+    "id": "itinerary-teasers",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "aem-content-fragment",
+        "name": "list of itineraries",
+        "label": "Itineraries List Fragment",
+        "validation": {
+          "rootPath": "/content/dam/celestyal"
+        },
+        "multi": false
+      }
+    ]
+  },
+  {
+    "id": "list-imagetext",
+    "fields": [
+      {
+        "component": "text",
+        "name": "heading",
+        "label": "Heading"
+      },
+      {
+        "component": "aem-content",
+        "name": "button_link",
+        "label": "Link",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "button_label",
+        "label": "Link Label"
+      }
+    ]
+  },
+  {
+    "id": "list-imagetext-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description"
+      }
+    ]
+  },
+  {
+    "id": "media-gallery",
+    "fields": [
+      {
+        "component": "select",
+        "name": "variant",
+        "label": "Type",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "Full Width",
+            "value": "full-width"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "media-gallery-item",
+    "fields": [
+      {
+        "component": "select",
+        "name": "media-type",
+        "label": "Media Type",
+        "options": [
+          {
+            "name": "Local Asset",
+            "value": "local-asset"
+          },
+          {
+            "name": "YouTube Video",
+            "value": "youtube-video"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "caption",
+        "value": "",
+        "label": "Caption",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "assetReference",
+        "label": "Image/Video",
+        "valueType": "string",
+        "condition": {
+          "==": [
+            {
+              "var": "media-type"
+            },
+            "local-asset"
+          ]
+        }
+      },
+      {
+        "component": "text",
+        "name": "youtube-id",
+        "value": "",
+        "label": "YouTube ID",
+        "valueType": "string",
+        "condition": {
+          "==": [
+            {
+              "var": "media-type"
+            },
+            "youtube-video"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "need-to-know",
+    "fields": [
+      {
+        "component": "text",
+        "name": "heading",
+        "label": "Heading"
+      },
+      {
+        "component": "checkbox-group",
+        "name": "checkbox",
+        "label": "Choose option",
+        "value": [],
+        "options": [
+          {
+            "name": "Bring water",
+            "value": "bring-Water"
+          },
+          {
+            "name": "Family friendly",
+            "value": "family-Friendly"
+          },
+          {
+            "name": "Religious places",
+            "value": "religious-Places"
+          },
+          {
+            "name": "Swimwear",
+            "value": "swimwear"
+          },
+          {
+            "name": "Shopping",
+            "value": "shopping"
+          },
+          {
+            "name": "Meal",
+            "value": "meal"
+          },
+          {
+            "name": "Panoramic view",
+            "value": "panoramic-View"
+          },
+          {
+            "name": "Refreshment",
+            "value": "refreshment"
+          },
+          {
+            "name": "Important notice",
+            "value": "important-Notice"
+          },
+          {
+            "name": "Walking",
+            "value": "walking"
+          },
+          {
+            "name": "Easy walking",
+            "value": "easy-Walking"
+          },
+          {
+            "name": "Moderate walking",
+            "value": "moderate-Walking"
+          },
+          {
+            "name": "Hard walking",
+            "value": "hard-Walking"
+          },
+          {
+            "name": "Adventure",
+            "value": "adventure"
+          },
+          {
+            "name": "Folklore",
+            "value": "folklore"
+          },
+          {
+            "name": "Culture experience",
+            "value": "culture-Experience"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "spacing",
+    "fields": [
+      {
+        "component": "select",
+        "name": "style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Size XL",
+            "value": "spacing-xl"
+          },
+          {
+            "name": "Size LG",
+            "value": "spacing-lg"
+          },
+          {
+            "name": "Size MD",
+            "value": "spacing-md"
+          },
+          {
+            "name": "Size SM",
+            "value": "spacing-sm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "stage",
+    "fields": [
+      {
+        "component": "select",
+        "name": "media",
+        "label": "Choose media",
+        "options": [
+          {
+            "name": "Image",
+            "value": "image"
+          },
+          {
+            "name": "Video",
+            "value": "video"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false,
+        "condition": {
+          "==": [
+            {
+              "var": "media"
+            },
+            "image"
+          ]
+        }
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "value": "",
+        "condition": {
+          "==": [
+            {
+              "var": "media"
+            },
+            "image"
+          ]
+        }
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "video-url",
+        "label": "Video URL",
+        "multi": false,
+        "condition": {
+          "==": [
+            {
+              "var": "media"
+            },
+            "video"
+          ]
+        }
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "video-thumbnail",
+        "label": "Video Thumbnail",
+        "multi": false,
+        "condition": {
+          "==": [
+            {
+              "var": "media"
+            },
+            "video"
+          ]
+        }
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "autoplay",
+        "label": "Autoplay",
+        "condition": {
+          "==": [
+            {
+              "var": "media"
+            },
+            "video"
+          ]
+        }
+      },
+      {
+        "component": "richtext",
+        "name": "stage_title",
+        "value": "",
+        "label": "Title",
         "valueType": "string"
       }
     ]
   },
   {
-    "id": "breadcrumbs",
+    "id": "teaser-promotion",
     "fields": [
       {
+        "component": "select",
+        "name": "color",
+        "label": "Color variation",
+        "options": [
+          {
+            "name": "Santorini",
+            "value": "santorini"
+          },
+          {
+            "name": "Crete",
+            "value": "crete"
+          },
+          {
+            "name": "Rhodes",
+            "value": "rhodes"
+          },
+          {
+            "name": "Mykonos",
+            "value": "mykonos"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "shape",
+        "value": "chora",
+        "label": "Shape variation",
+        "options": [
+          {
+            "name": "Chora",
+            "value": "chora"
+          },
+          {
+            "name": "Oia",
+            "value": "oia"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
         "component": "aem-content",
-        "name": "reference",
-        "label": "Reference"
+        "name": "button_link",
+        "label": "Link",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "button_label",
+        "label": "Link Label"
+      }
+    ]
+  },
+  {
+    "id": "text-image-large",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image_ref",
+        "label": "Image",
+        "multi": false,
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "image_alt",
+        "label": "Image Alt"
+      },
+      {
+        "component": "text",
+        "name": "headline",
+        "label": "Headline"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text",
+        "required": true
+      },
+      {
+        "component": "select",
+        "name": "imagePlacement",
+        "label": "Image Placement",
+        "options": [
+          {
+            "name": "left",
+            "value": "left"
+          },
+          {
+            "name": "right",
+            "value": "right"
+          }
+        ]
+      },
+      {
+        "component": "aem-content",
+        "name": "primary_button_link",
+        "label": "Primary Link",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "primary_button_label",
+        "label": "Primary Link Label"
+      },
+      {
+        "component": "aem-content",
+        "name": "secondary_button_link",
+        "label": "Secondary Link",
+        "validation": {
+          "rootPath": "/content/celestyal"
+        }
+      },
+      {
+        "component": "text",
+        "name": "secondary_button_label",
+        "label": "Secondary Link Label"
+      }
+    ]
+  },
+  {
+    "id": "text-image",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image_ref",
+        "label": "Image",
+        "multi": false,
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "image_alt",
+        "label": "Image Alt"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text",
+        "required": true
+      },
+      {
+        "component": "select",
+        "name": "imagePlacement",
+        "label": "Image Placement",
+        "options": [
+          {
+            "name": "left",
+            "value": "left"
+          },
+          {
+            "name": "right",
+            "value": "right"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "fields": [
+      {
+        "component": "select",
+        "name": "video-type",
+        "label": "Choose video type",
+        "options": [
+          {
+            "name": "Internal",
+            "value": "internal"
+          },
+          {
+            "name": "Youtube",
+            "value": "youtube"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "video-url",
+        "label": "Video URL",
+        "multi": false,
+        "condition": {
+          "==": [
+            {
+              "var": "video-type"
+            },
+            "internal"
+          ]
+        }
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "video-thumbnail",
+        "label": "Video Thumbnail",
+        "multi": false,
+        "required": true,
+        "condition": {
+          "==": [
+            {
+              "var": "video-type"
+            },
+            "internal"
+          ]
+        }
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "youtube-key",
+        "label": "Youtube Key",
+        "multi": false,
+        "condition": {
+          "==": [
+            {
+              "var": "video-type"
+            },
+            "youtube"
+          ]
+        }
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "video-caption",
+        "label": "Video Caption"
       }
     ]
   }

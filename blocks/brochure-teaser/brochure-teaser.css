@@ -1,0 +1,59 @@
+.brochure-teaser,
+.brochure-content-wrapper,
+.brochure-teaser .image {
+    display: flex;
+    justify-content: center;
+}
+
+.brochure-teaser,
+.brochure-content-wrapper {
+    flex-direction: column;
+}
+
+.brochure-teaser {
+    padding: var(--spacing-88) 0;
+    gap: var(--spacing-32);
+    align-items: flex-start;
+}
+
+.brochure-teaser .image {
+    align-items: center;
+}
+
+.brochure-teaser .image img {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    width: 100%;
+}
+
+.brochure-content-wrapper {
+    gap: var(--spacing-24);
+    padding: var(--spacing-40) 0;
+}
+
+.brochure-teaser .brochure-headline,
+.brochure-teaser .brochure-text p,
+.brochure-teaser .brochure-cta {
+    margin: 0;
+}
+
+.brochure-teaser .brochure-cta {
+    width: fit-content;
+}
+
+@media (width >= 768px) {
+    .brochure-teaser {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .brochure-teaser .image {
+        max-width: calc((100% - var(--spacing-32)) / 3);
+    }
+
+    .brochure-content-wrapper {
+        padding: 0;
+    }
+}
