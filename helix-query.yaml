@@ -1,11 +1,28 @@
 version: 1
 indices:
-  site-en:
+  site-excursions:
     include:
-      - '**/test/**'
-    target: /test/query-index.json
+      - '**/excursion-hub/**'
+    target: /excursions/query-index.json
     properties:
-      title:
-        select: head > meta[property="og:title"]
+      cf-reference:
+        select: main div.excursion-profile a
+        value: |
+          attribute(el, 'href')
+      page:
+        select: head > meta[property="og:url"]
+        value: |
+          attribute(el, 'content')
+  site-iteneraries:
+    include:
+      - '**/cruises/**'
+    target: /iteneraries/query-index.json
+    properties:
+      cf-reference:
+        select: main div.itinerary-detail-profile a
+        value: |
+          attribute(el, 'href')
+      page:
+        select: head > meta[property="og:url"]
         value: |
           attribute(el, 'content')
