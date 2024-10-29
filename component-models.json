@@ -867,6 +867,19 @@
     ]
   },
   {
+    "id": "download-center",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "iframeUrl",
+        "value": "",
+        "label": "Download Center URL",
+        "description": "Please provide a URL to the download center."
+      }
+    ]
+  },
+  {
     "id": "excursion-profile",
     "fields": [
       {
@@ -959,19 +972,6 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "iframe-app",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "iframeUrl",
-        "value": "",
-        "label": "iFrame URL",
-        "description": "Please provide a URL to an iFrame app."
       }
     ]
   },
