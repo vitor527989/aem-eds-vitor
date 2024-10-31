@@ -35,10 +35,11 @@ async function buildBreadcrumbsLinks(rootLink) {
       if (rootReached) {
         // eslint-disable-next-line no-await-in-loop
         parentPageTitleAndStatus = await getParentPageTitle(linkToUse);
+        let disabled = false;
         if (parentPageTitleAndStatus.pageResponse !== 200) {
-          crumbs.push({ title: parentPageTitleAndStatus.title });
+          disabled = true;
         } else {
-          crumbs.push({ title: parentPageTitleAndStatus.title });
+          crumbs.push({ title: parentPageTitleAndStatus.title, url: linkToUse, disabled });
         }
       }
     }
