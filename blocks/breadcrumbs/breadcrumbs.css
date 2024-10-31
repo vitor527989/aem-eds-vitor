@@ -4,31 +4,38 @@
 
 .section.breadcrumbs-container {
     padding-top: var(--spacing-64);
-    padding-bottom: var(--spacing-32);
+    padding-bottom: var(--spacing-16);
 }
 
 .breadcrumbs {
     display: none;
-    font-size: var(--font-size-xs);
+}
+
+.breadcrumbs .breadcrumbs-list,
+.breadcrumbs .breadcrumbs-item,
+.breadcrumbs .breadcrumbs-item a {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
 }
 
 .breadcrumbs .breadcrumbs-list {
-    display: flex;
-    align-items: center;
-    flex-flow: wrap;
     list-style: none;
     padding: 0;
     margin-top: 0;
     margin-bottom: 0;
 }
 
-.breadcrumbs .breadcrumbs-item {
-    padding: 0;
-    margin-right: var(--spacing-8);
-}
-
+.breadcrumbs .breadcrumbs-item,
 .breadcrumbs .breadcrumbs-item a {
     color: var(--color-midnight-500);
+    font-size: var(--font-size-xs);
+    font-weight: 400;
+}
+
+.breadcrumbs .breadcrumbs-item a:hover {
+    color: var(--color-aqua-500);
+    text-decoration: none;
 }
 
 .breadcrumbs .breadcrumbs-item[aria-current] {
@@ -43,5 +50,9 @@
 @media (width >= 900px) {
     .breadcrumbs {
         display: block;
+    }
+
+    .section.breadcrumbs-container {
+        padding-bottom: var(--spacing-32);
     }
 }

@@ -35,11 +35,11 @@ async function buildBreadcrumbsLinks(rootLink) {
       if (rootReached) {
         // eslint-disable-next-line no-await-in-loop
         parentPageTitleAndStatus = await getParentPageTitle(linkToUse);
-        let disabled = false;
         if (parentPageTitleAndStatus.pageResponse !== 200) {
-          disabled = true;
+          crumbs.push({ title: parentPageTitleAndStatus.title });
+        } else {
+          crumbs.push({ title: parentPageTitleAndStatus.title, url: linkToUse });
         }
-        crumbs.push({ title: parentPageTitleAndStatus.title, url: linkToUse, disabled });
       }
     }
   }
@@ -75,27 +75,32 @@ export default async function decorate(block) {
 
   let htmlContent = `
           <nav class="breadcrumbs">
-            <ol class="breadcrumbs-list">
+            <ul class="breadcrumbs-list">
         `;
-
   crumbs.forEach((crumb) => {
     if (crumb['aria-current']) {
       htmlContent += `
-          <svg class="arrow-left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0303 2.96967C12.3232 3.26256 12.3232 3.73744 12.0303 4.03033L4.81066 11.25H21C21.4142 11.25 21.75 11.5858 21.75 12C21.75 12.4142 21.4142 12.75 21 12.75H4.81066L12.0303 19.9697C12.3232 20.2626 12.3232 20.7374 12.0303 21.0303C11.7374 21.3232 11.2626 21.3232 10.9697 21.0303L2.46967 12.5303C2.17678 12.2374 2.17678 11.7626 2.46967 11.4697L10.9697 2.96967C11.2626 2.67678 11.7374 2.67678 12.0303 2.96967Z" fill="#06242D"/>
-          </svg>
-          <li class="breadcrumbs-item" aria-current=${crumb['aria-current']}>${crumb.title}</li>
+          <li class="breadcrumbs-item" aria-current=${crumb['aria-current']}>
+            <svg class="arrow-left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5303 5.46967C15.8232 5.76256 15.8232 6.23744 15.5303 6.53033L10.0607 12L15.5303 17.4697C15.8232 17.7626 15.8232 18.2374 15.5303 18.5303C15.2374 18.8232 14.7626 18.8232 14.4697 18.5303L8.46967 12.5303C8.17678 12.2374 8.17678 11.7626 8.46967 11.4697L14.4697 5.46967C14.7626 5.17678 15.2374 5.17678 15.5303 5.46967Z" fill="currentColor"/>
+            </svg>
+            ${crumb.title}
+          </li>
         `;
     } else {
       htmlContent += `
-          <svg class="arrow-left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0303 2.96967C12.3232 3.26256 12.3232 3.73744 12.0303 4.03033L4.81066 11.25H21C21.4142 11.25 21.75 11.5858 21.75 12C21.75 12.4142 21.4142 12.75 21 12.75H4.81066L12.0303 19.9697C12.3232 20.2626 12.3232 20.7374 12.0303 21.0303C11.7374 21.3232 11.2626 21.3232 10.9697 21.0303L2.46967 12.5303C2.17678 12.2374 2.17678 11.7626 2.46967 11.4697L10.9697 2.96967C11.2626 2.67678 11.7374 2.67678 12.0303 2.96967Z" fill="#6A7C81"/>
-          </svg>
-          <li class="breadcrumbs-item"><a href="${crumb.url}">${crumb.title}</a></li>
+          <li class="breadcrumbs-item">
+            <a href="${crumb.url}">
+              <svg class="arrow-left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5303 5.46967C15.8232 5.76256 15.8232 6.23744 15.5303 6.53033L10.0607 12L15.5303 17.4697C15.8232 17.7626 15.8232 18.2374 15.5303 18.5303C15.2374 18.8232 14.7626 18.8232 14.4697 18.5303L8.46967 12.5303C8.17678 12.2374 8.17678 11.7626 8.46967 11.4697L14.4697 5.46967C14.7626 5.17678 15.2374 5.17678 15.5303 5.46967Z" fill="currentColor"/>
+              </svg>
+              ${crumb.title}
+            </a>
+          </li>
         `;
     }
   });
-  htmlContent += '</ol>';
+  htmlContent += '</ul>';
 
   block.innerText = '';
   block.innerHTML = htmlContent;
