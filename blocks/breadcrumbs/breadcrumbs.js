@@ -1,4 +1,5 @@
 import { getMetadata } from '../../scripts/aem.js';
+import { isInAuthorMode } from '../../scripts/custom.js';
 
 export function parseLink(el) {
   if (!el) return '';
@@ -10,7 +11,7 @@ async function getParentPageTitle(link) {
   const html = await response.text();
   const parser = new DOMParser();
   const pageDoc = parser.parseFromString(html, 'text/html');
-  return getMetadata('og:title', pageDoc);
+  return ({ title: getMetadata('og:title', pageDoc), pageResponse: response.status });
 }
 
 async function buildBreadcrumbsLinks(rootLink) {
@@ -22,17 +23,23 @@ async function buildBreadcrumbsLinks(rootLink) {
   // eslint-disable-next-line no-restricted-syntax
   for (const pathElement of relativePathUrls) {
     if (pathElement !== '') {
-      let parentPageTitle = '';
+      let parentPageTitleAndStatus = '';
       link = link.concat('/', pathElement);
       let linkToUse = link;
-      linkToUse = pathElement.includes('.html') ? link : link.concat('.html');
+      if (isInAuthorMode()) {
+        linkToUse = pathElement.includes('.html') ? link : link.concat('.html');
+      }
       if (linkToUse === originUrl + rootLink && !rootReached) {
         rootReached = true;
       }
       if (rootReached) {
         // eslint-disable-next-line no-await-in-loop
-        parentPageTitle = await getParentPageTitle(linkToUse);
-        crumbs.push({ title: parentPageTitle, url: linkToUse });
+        parentPageTitleAndStatus = await getParentPageTitle(linkToUse);
+        let disabled = false;
+        if (parentPageTitleAndStatus.pageResponse !== 200) {
+          disabled = true;
+        }
+        crumbs.push({ title: parentPageTitleAndStatus.title, url: linkToUse, disabled });
       }
     }
   }
