@@ -38,7 +38,7 @@ async function buildBreadcrumbsLinks(rootLink) {
         if (parentPageTitleAndStatus.pageResponse !== 200) {
           crumbs.push({ title: parentPageTitleAndStatus.title });
         } else {
-          crumbs.push({ title: parentPageTitleAndStatus.title, url: linkToUse });
+          crumbs.push({ title: parentPageTitleAndStatus.title });
         }
       }
     }
