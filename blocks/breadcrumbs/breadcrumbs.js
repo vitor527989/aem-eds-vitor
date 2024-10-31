@@ -38,9 +38,8 @@ async function buildBreadcrumbsLinks(rootLink) {
         let disabled = false;
         if (parentPageTitleAndStatus.pageResponse !== 200) {
           disabled = true;
-        } else {
-          crumbs.push({ title: parentPageTitleAndStatus.title, url: linkToUse, disabled });
         }
+        crumbs.push({ title: parentPageTitleAndStatus.title, url: linkToUse, disabled });
       }
     }
   }
@@ -89,16 +88,19 @@ export default async function decorate(block) {
           </li>
         `;
     } else {
+      htmlContent += '<li class="breadcrumbs-item">';
+      if (!crumb.disabled) {
+        htmlContent += `<a href="${crumb.url}">`;
+      }
       htmlContent += `
-          <li class="breadcrumbs-item">
-            <a href="${crumb.url}">
-              <svg class="arrow-left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5303 5.46967C15.8232 5.76256 15.8232 6.23744 15.5303 6.53033L10.0607 12L15.5303 17.4697C15.8232 17.7626 15.8232 18.2374 15.5303 18.5303C15.2374 18.8232 14.7626 18.8232 14.4697 18.5303L8.46967 12.5303C8.17678 12.2374 8.17678 11.7626 8.46967 11.4697L14.4697 5.46967C14.7626 5.17678 15.2374 5.17678 15.5303 5.46967Z" fill="currentColor"/>
-              </svg>
-              ${crumb.title}
-            </a>
-          </li>
-        `;
+        <svg class="arrow-left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5303 5.46967C15.8232 5.76256 15.8232 6.23744 15.5303 6.53033L10.0607 12L15.5303 17.4697C15.8232 17.7626 15.8232 18.2374 15.5303 18.5303C15.2374 18.8232 14.7626 18.8232 14.4697 18.5303L8.46967 12.5303C8.17678 12.2374 8.17678 11.7626 8.46967 11.4697L14.4697 5.46967C14.7626 5.17678 15.2374 5.17678 15.5303 5.46967Z" fill="currentColor"/>
+        </svg>
+            ${crumb.title}`;
+      if (!crumb.disabled) {
+        htmlContent += '</a>';
+      }
+      htmlContent += '</li>';
     }
   });
   htmlContent += '</ul>';
