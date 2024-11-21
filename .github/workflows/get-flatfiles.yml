@@ -3,21 +3,18 @@ name: Get Flatfiles on a CRON Schedule
 on:
   workflow_dispatch:
 jobs:
-  Download:
-    name: Download
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2.1.0
-      with:
-        fetch-depth: 2
-    - name: Download
-      uses: actions/download-sftp-files@v1
+    - uses: actions/checkout@v4
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@v0.1.7
       with:
         host: ${{ secrets.FLATFILE_INTEGRATION_SERVER }}
-        port: 22
         username: ${{ secrets.FLATFILE_INTEGRATION_USER }}
         password: ${{ secrets.FLATFILE_INTEGRATION_PASS }}
-        remote-dir-path: '.'
-        local-dir-path: ${{ github.workspace }}
-        fail-if-no-files: 'true'
+        port: 22
+        source: '.'
+        target: ${{ github.workspace }}
         
