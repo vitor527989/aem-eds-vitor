@@ -3,22 +3,19 @@ name: Get Flatfiles on a CRON Schedule
 on:
   workflow_dispatch:
 jobs:
-  sftp_transfer_job:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
-    name: SFTP Transfer Test
     steps:
-    - uses: actions/checkout@v2
-   
-    - name: Connect
-      id: connect
-      uses: danhendrickson/sftp-transfer-action@v1.23
+    - uses: actions/checkout@v2.1.0
       with:
-        server: ${{ secrets.FLATFILE_INTEGRATION_SERVER }}
-        user: ${{ secrets.FLATFILE_INTEGRATION_USER }}
-        pass: ${{ secrets.FLATFILE_INTEGRATION_PASS }}
-        port: 22
-        local-path: './dist/'
-        remote-path: '/public_html/test/'
+        fetch-depth: 2
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ${{ secrets.FLATFILE_INTEGRATION_SERVER }}
+        ftp-username: ${{ secrets.FLATFILE_INTEGRATION_USER }}
+        ftp-password: ${{ secrets.FLATFILE_INTEGRATION_PASS }}
 
     - name: Transfer Status
       run: echo "Transfer Status - ${{ steps.connect.outputs.transferStatus }}"
