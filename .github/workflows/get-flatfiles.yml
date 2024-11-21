@@ -14,7 +14,7 @@ jobs:
         host: ${{ secrets.FLATFILE_INTEGRATION_SERVER }}
         username: ${{ secrets.FLATFILE_INTEGRATION_USER }}
         password: ${{ secrets.FLATFILE_INTEGRATION_PASS }}
-        port: 22
+        port: ${{ secrets.FLATFILE_INTEGRATION_PORT }}
         source: '.'
         target: ${{ github.workspace }}
         
