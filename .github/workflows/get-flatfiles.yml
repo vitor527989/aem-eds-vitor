@@ -16,6 +16,6 @@ jobs:
         ftp-server: ${{ secrets.FLATFILE_INTEGRATION_SERVER }}
         ftp-username: ${{ secrets.FLATFILE_INTEGRATION_USER }}
         ftp-password: ${{ secrets.FLATFILE_INTEGRATION_PASS }}
-
+        dry-run: true
     - name: Transfer Status
       run: echo "Transfer Status - ${{ steps.connect.outputs.transferStatus }}"
