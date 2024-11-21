@@ -3,19 +3,21 @@ name: Get Flatfiles on a CRON Schedule
 on:
   workflow_dispatch:
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  Download:
+    name: Download
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.1.0
       with:
         fetch-depth: 2
-    - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+    - name: Download
+      uses: actions/download-sftp-files@v1
       with:
-        ftp-server: ${{ secrets.FLATFILE_INTEGRATION_SERVER }}
-        ftp-username: ${{ secrets.FLATFILE_INTEGRATION_USER }}
-        ftp-password: ${{ secrets.FLATFILE_INTEGRATION_PASS }}
-        dry-run: true
-    - name: Transfer Status
-      run: echo "Transfer Status - ${{ steps.connect.outputs.transferStatus }}"
+        host: ${{ secrets.FLATFILE_INTEGRATION_SERVER }}
+        port: 22
+        username: ${{ secrets.FLATFILE_INTEGRATION_USER }}
+        password: ${{ secrets.FLATFILE_INTEGRATION_PASS }}
+        remote-dir-path: '.'
+        local-dir-path: ${{ github.workspace }}
+        fail-if-no-files: 'true'
+        
