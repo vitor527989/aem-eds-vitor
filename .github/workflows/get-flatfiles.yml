@@ -13,5 +13,6 @@ jobs:
       with:
         host: sftp://celestyaldataplatform.godigitalpricing@celestyaldataplatform.blob.core.windows.net
         password: ${{ secrets.FLATFILE_INTEGRATION_PASS }}
+        port: 22
         source: '.'
         target: ${{ github.workspace }}
