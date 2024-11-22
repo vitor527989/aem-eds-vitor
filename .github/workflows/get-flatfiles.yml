@@ -11,7 +11,7 @@ jobs:
     
     - name: Download File
       run: |
-        curl -u ${{ secrets.FLATFILE_INTEGRATION_USER }}:${{ secrets.FLATFILE_INTEGRATION_PASS }} ${{ secrets.FLATFILE_INTEGRATION_SERVER }} --output ./Availability-Pricing-GRC.json
+        curl sftp://celestyaldataplatform.godigitalpricing@celestyaldataplatform.blob.core.windows.net --output ./Availability-Pricing-GRC.json
         working-directory: ${{ github.workspace }}
 
     - name: Commit and Push Changes
