@@ -1,23 +1,18 @@
-name: Download File
+name: Get Flatfiles on a CRON Schedule
 
 on:
   workflow_dispatch:
-
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    
-    - name: Download File
-      run: |
-        curl sftp://celestyaldataplatform.godigitalpricing@celestyaldataplatform.blob.core.windows.net --output ./Availability-Pricing-GRC.json
-        working-directory: ${{ github.workspace }}
-
-    - name: Commit and Push Changes
-      run: |
-        git config --global user.name "${{ github.actor }}"
-        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-        git add Availability-Pricing-GRC.json
-        git commit -m 'Update downloaded file'
-        git push
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: sftp://celestyaldataplatform.godigitalpricing@celestyaldataplatform.blob.core.windows.net
+        password: ${{ secrets.FLATFILE_INTEGRATION_PASS }}
+        port: ${{ secrets.FLATFILE_INTEGRATION_PORT }}
+        source: '.'
+        target: ${{ github.workspace }}
