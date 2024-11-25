@@ -28,7 +28,7 @@ jobs:
         run: |
           mkdir -p sftp_data
           lftp -u "celestyaldataplatform.godigitalpricing,SL5SSlL1J3YYuyb0rs0EeD8DYL2PTsTm" sftp://celestyaldataplatform.blob.core.windows.net <<EOF
-          mirror -parallel=2 . ./sftp_data
+          mirror --verbose --parallel=2 . ./sftp_data
           bye
           EOF
         env:
