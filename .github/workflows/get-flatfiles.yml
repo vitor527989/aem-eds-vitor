@@ -22,7 +22,7 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -H $SFTP_HOST >> ~/.ssh/known_hosts
         env:
-          SFTP_HOST: ${{ secrets.FLATFILE_INTEGRATION_SERVER }}
+          SFTP_HOST: ${{ secrets.FLATFILE_INTEGRATION_SFTP_HOST }}
  
       - name: Download folder from SFTP
         run: |
