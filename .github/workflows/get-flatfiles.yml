@@ -2,17 +2,41 @@ name: Get Flatfiles on a CRON Schedule
 
 on:
   workflow_dispatch:
+ 
 jobs:
-  build:
-    name: Build
+  sync-folder:
     runs-on: ubuntu-latest
+ 
     steps:
-    - uses: actions/checkout@v4
-    - name: copy file via ssh password
-      uses: appleboy/scp-action@v0.1.7
-      with:
-        host: sftp://celestyaldataplatform.godigitalpricing@celestyaldataplatform.blob.core.windows.net
-        password: ${{ secrets.FLATFILE_INTEGRATION_PASS }}
-        port: 22
-        source: '.'
-        target: ${{ github.workspace }}
+      - name: Checkout repository
+        uses: actions/checkout@v3
+ 
+      - name: Install LFTP
+        run: sudo apt-get update && sudo apt-get install -y lftp
+ 
+      - name: Add SFTP server to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H $SFTP_HOST >> ~/.ssh/known_hosts
+        env:
+          SFTP_HOST: celestyaldataplatform.blob.core.windows.net
+ 
+      - name: Download folder from SFTP
+        run: |
+          mkdir -p sftp_data
+          lftp -u "celestyaldataplatform.godigitalpricing,SL5SSlL1J3YYuyb0rs0EeD8DYL2PTsTm" sftp://celestyaldataplatform.blob.core.windows.net <<EOF
+          mirror --verbose --delete --parallel=2 . ./sftp_data
+          bye
+          EOF
+        env:
+          SFTP_HOST: celestyaldataplatform.blob.core.windows.net
+ 
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          cp -r sftp_data/* .
+          git add .
+          git commit -m "Sync folder from SFTP server"
+          git push
+        continue-on-error: true
