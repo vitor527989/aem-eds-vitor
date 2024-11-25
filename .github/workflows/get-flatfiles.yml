@@ -22,12 +22,12 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -H $SFTP_HOST >> ~/.ssh/known_hosts
         env:
-          SFTP_HOST: celestyaldataplatform.blob.core.windows.net
+          SFTP_HOST: ${{ FLATFILE_INTEGRATION_SERVER }}
  
       - name: Download folder from SFTP
         run: |
           mkdir -p sftp_data
-          lftp -u "celestyaldataplatform.godigitalpricing,SL5SSlL1J3YYuyb0rs0EeD8DYL2PTsTm" sftp://celestyaldataplatform.blob.core.windows.net <<EOF
+          lftp -u "${{ secrets.FLATFILE_INTEGRATION_USER }},${{ secrets.FLATFILE_INTEGRATION_PASS }}" ${{ FLATFILE_INTEGRATION_SERVER }} <<EOF
           mirror --verbose --parallel=2 . ./sftp_data
           bye
           EOF
