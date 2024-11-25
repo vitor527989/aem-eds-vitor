@@ -2,6 +2,9 @@ name: Get Flatfiles on a CRON Schedule
 
 on:
   workflow_dispatch:
+  
+permissions:
+  contents: write
  
 jobs:
   sync-folder:
