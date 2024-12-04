@@ -1,9 +1,10 @@
 name: Get Flatfiles on a CRON Schedule
 
 on:
-  workflow_dispatch
-  
-  ${{ vars.FLATFILE_TIMER }}
+  workflow_dispatch:
+
+  schedule:
+    - cron: ${{ vars.FLATFILE_TIMER }}
 
 permissions:
   contents: write
