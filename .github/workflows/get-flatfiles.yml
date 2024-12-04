@@ -1,7 +1,7 @@
 name: Get Flatfiles on a CRON Schedule
 
 on:
-  workflow_dispatch:
+  ${{ vars.FLATFILE_TIMER }}
 
 permissions:
   contents: write
