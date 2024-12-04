@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "${{ vars.FLATFILE_TIMER }}"
 
 permissions:
   contents: write
