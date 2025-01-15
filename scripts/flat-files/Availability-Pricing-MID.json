@@ -1,5 +1,5 @@
 {
-    "info": "2025-01-14T06:03:41.894043Z",
+    "info": "2025-01-15T05:54:31.513189Z",
     "ports": {
         "departure": [
             "ABD",
@@ -68,6 +68,104 @@
     },
     "itineraries": [
         {
+            "code": "3DICONICWINTER",
+            "name": "Iconic Greek Islands - 3Nights (Mar & Nov)",
+            "ship": "CD",
+            "nights": 3,
+            "ports": {
+                "departure": "LAV",
+                "visiting": [
+                    "KUS",
+                    "MYK",
+                    "LAV",
+                    "SAN",
+                    "PAT"
+                ],
+                "arrival": "LAV"
+            },
+            "prices": [
+                {
+                    "year": 2025,
+                    "month": 3,
+                    "categories": [
+                        {
+                            "category": "INSIDE",
+                            "type": "IB",
+                            "price": 729.0
+                        },
+                        {
+                            "category": "OUTSIDE",
+                            "type": "XBO",
+                            "price": 829.0
+                        }
+                    ]
+                },
+                {
+                    "year": 2025,
+                    "month": 11,
+                    "categories": [
+                        {
+                            "category": "BALCONY",
+                            "type": "BA",
+                            "price": 1039.0
+                        },
+                        {
+                            "category": "INSIDE",
+                            "type": "IA",
+                            "price": 389.0
+                        },
+                        {
+                            "category": "OUTSIDE",
+                            "type": "XBO",
+                            "price": 479.0
+                        }
+                    ]
+                },
+                {
+                    "year": 2026,
+                    "month": 3,
+                    "categories": [
+                        {
+                            "category": "BALCONY",
+                            "type": "BA",
+                            "price": 1089.0
+                        },
+                        {
+                            "category": "INSIDE",
+                            "type": "IA",
+                            "price": 499.0
+                        },
+                        {
+                            "category": "OUTSIDE",
+                            "type": "XD",
+                            "price": 749.0
+                        }
+                    ]
+                },
+                {
+                    "year": 2026,
+                    "month": 11,
+                    "categories": [
+                        {
+                            "category": "BALCONY",
+                            "type": "BA",
+                            "price": 1089.0
+                        },
+                        {
+                            "category": "INSIDE",
+                            "type": "IA",
+                            "price": 499.0
+                        },
+                        {
+                            "category": "OUTSIDE",
+                            "type": "XD",
+                            "price": 749.0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "code": "4N DESERT DAYS",
             "name": "Desert Days - 4Nights",
             "ship": "CJ",
@@ -132,6 +230,11 @@
                     "year": 2025,
                     "month": 3,
                     "categories": [
+                        {
+                            "category": "INSIDE",
+                            "type": "IB",
+                            "price": 869.0
+                        },
                         {
                             "category": "OUTSIDE",
                             "type": "XBO",
@@ -266,7 +369,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XBO",
+                            "type": "XA",
                             "price": 879.0
                         }
                     ]
@@ -382,7 +485,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XBO",
+                            "type": "XA",
                             "price": 1039.0
                         }
                     ]
@@ -508,7 +611,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XA",
+                            "type": "XBO",
                             "price": 1039.0
                         }
                     ]
@@ -565,8 +668,8 @@
                         },
                         {
                             "category": "INSIDE",
-                            "type": "IC",
-                            "price": 659.0
+                            "type": "IB",
+                            "price": 599.0
                         },
                         {
                             "category": "OUTSIDE",
@@ -712,7 +815,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XBO",
+                            "type": "XA",
                             "price": 929.0
                         }
                     ]
@@ -775,7 +878,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XA",
+                            "type": "XBO",
                             "price": 1079.0
                         }
                     ]
@@ -896,7 +999,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XA",
+                            "type": "XBO",
                             "price": 929.0
                         }
                     ]
@@ -914,22 +1017,6 @@
                             "category": "INSIDE",
                             "type": "IA",
                             "price": 1059.0
-                        }
-                    ]
-                },
-                {
-                    "year": 2026,
-                    "month": 5,
-                    "categories": [
-                        {
-                            "category": "BALCONY",
-                            "type": "SJA",
-                            "price": 2449.0
-                        },
-                        {
-                            "category": "INSIDE",
-                            "type": "IA",
-                            "price": 1339.0
                         }
                     ]
                 }
@@ -964,11 +1051,6 @@
                     "year": 2025,
                     "month": 5,
                     "categories": [
-                        {
-                            "category": "INSIDE",
-                            "type": "IC",
-                            "price": 2769.0
-                        },
                         {
                             "category": "OUTSIDE",
                             "type": "XBO",
@@ -1007,9 +1089,9 @@
                     "month": 4,
                     "categories": [
                         {
-                            "category": "BALCONY",
-                            "type": "SJA",
-                            "price": 4359.0
+                            "category": "OUTSIDE",
+                            "type": "XBO",
+                            "price": 2669.0
                         }
                     ]
                 },
@@ -1036,6 +1118,17 @@
                             "category": "OUTSIDE",
                             "type": "XBO",
                             "price": 3239.0
+                        }
+                    ]
+                },
+                {
+                    "year": 2026,
+                    "month": 10,
+                    "categories": [
+                        {
+                            "category": "DELUXE",
+                            "type": "SG",
+                            "price": 5619.0
                         }
                     ]
                 }
@@ -1168,110 +1261,6 @@
             ]
         },
         {
-            "code": "IDYLLIC AND S ADRIATIC",
-            "name": "Mediterranean Icons including Venice (East to West)",
-            "ship": "CJ",
-            "nights": 14,
-            "ports": {
-                "departure": "PIR",
-                "visiting": [
-                    "MLO",
-                    "KAK",
-                    "KUS",
-                    "SPL",
-                    "VEN",
-                    "THE",
-                    "PIR",
-                    "KOT",
-                    "MYK",
-                    "SAN",
-                    "HER"
-                ],
-                "arrival": "PIR"
-            },
-            "prices": [
-                {
-                    "year": 2025,
-                    "month": 7,
-                    "categories": [
-                        {
-                            "category": "INSIDE",
-                            "type": "IC",
-                            "price": 2769.0
-                        }
-                    ]
-                },
-                {
-                    "year": 2025,
-                    "month": 8,
-                    "categories": [
-                        {
-                            "category": "BALCONY",
-                            "type": "SJB",
-                            "price": 4339.0
-                        },
-                        {
-                            "category": "DELUXE",
-                            "type": "SJC",
-                            "price": 4719.0
-                        },
-                        {
-                            "category": "OUTSIDE",
-                            "type": "XBO",
-                            "price": 2239.0
-                        }
-                    ]
-                },
-                {
-                    "year": 2026,
-                    "month": 7,
-                    "categories": [
-                        {
-                            "category": "BALCONY",
-                            "type": "SJA",
-                            "price": 4359.0
-                        },
-                        {
-                            "category": "DELUXE",
-                            "type": "SG",
-                            "price": 5619.0
-                        },
-                        {
-                            "category": "INSIDE",
-                            "type": "IA",
-                            "price": 2549.0
-                        },
-                        {
-                            "category": "OUTSIDE",
-                            "type": "XBO",
-                            "price": 3239.0
-                        }
-                    ]
-                },
-                {
-                    "year": 2026,
-                    "month": 8,
-                    "categories": [
-                        {
-                            "category": "BALCONY",
-                            "type": "SJA",
-                            "price": 4359.0
-                        },
-                        {
-                            "category": "INSIDE",
-                            "type": "IA",
-                            "price": 2119.0
-                        },
-                        {
-                            "category": "OUTSIDE",
-                            "type": "XA",
-                            "price": 2669.0
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "code": "ADRIATIC SUMMER",
             "name": "Heavenly Venice,Greece and Croatia - 7Nights",
             "ship": "CJ",
@@ -1280,10 +1269,10 @@
                 "departure": "PIR",
                 "visiting": [
                     "KAK",
-                    "SPL",
                     "VEN",
-                    "KOT",
-                    "PIR"
+                    "SPL",
+                    "PIR",
+                    "KOT"
                 ],
                 "arrival": "PIR"
             },
@@ -1351,7 +1340,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XBO",
+                            "type": "XA",
                             "price": 1319.0
                         }
                     ]
@@ -1372,8 +1361,8 @@
                     "VEN",
                     "KUS",
                     "THE",
-                    "PIR",
                     "KOT",
+                    "PIR",
                     "MYK",
                     "SAN",
                     "HER"
@@ -1396,6 +1385,11 @@
                             "price": 4969.0
                         },
                         {
+                            "category": "INSIDE",
+                            "type": "IC",
+                            "price": 2769.0
+                        },
+                        {
                             "category": "OUTSIDE",
                             "type": "XBO",
                             "price": 2889.0
@@ -1416,82 +1410,93 @@
             ]
         },
         {
-            "code": "3DICONICWINTER",
-            "name": "Iconic Greek Islands - 3Nights (Mar & Nov)",
-            "ship": "CD",
-            "nights": 3,
+            "code": "IDYLLIC AND S ADRIATIC",
+            "name": "Mediterranean Icons including Venice (East to West)",
+            "ship": "CJ",
+            "nights": 14,
             "ports": {
-                "departure": "LAV",
+                "departure": "PIR",
                 "visiting": [
+                    "MLO",
+                    "KAK",
+                    "SPL",
+                    "VEN",
                     "KUS",
+                    "THE",
+                    "KOT",
+                    "PIR",
                     "MYK",
-                    "LAV",
                     "SAN",
-                    "PAT"
+                    "HER"
                 ],
-                "arrival": "LAV"
+                "arrival": "PIR"
             },
             "prices": [
                 {
                     "year": 2025,
-                    "month": 11,
+                    "month": 8,
                     "categories": [
                         {
                             "category": "BALCONY",
-                            "type": "BA",
-                            "price": 1039.0
+                            "type": "SJB",
+                            "price": 4339.0
                         },
                         {
-                            "category": "INSIDE",
-                            "type": "IA",
-                            "price": 389.0
+                            "category": "DELUXE",
+                            "type": "SJC",
+                            "price": 4719.0
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XA",
-                            "price": 479.0
+                            "type": "XBO",
+                            "price": 2239.0
                         }
                     ]
                 },
                 {
                     "year": 2026,
-                    "month": 3,
+                    "month": 7,
                     "categories": [
                         {
                             "category": "BALCONY",
-                            "type": "BA",
-                            "price": 1089.0
+                            "type": "SJA",
+                            "price": 4359.0
+                        },
+                        {
+                            "category": "DELUXE",
+                            "type": "SG",
+                            "price": 5619.0
                         },
                         {
                             "category": "INSIDE",
                             "type": "IA",
-                            "price": 499.0
+                            "price": 2549.0
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XD",
-                            "price": 749.0
+                            "type": "XBO",
+                            "price": 3239.0
                         }
                     ]
                 },
                 {
                     "year": 2026,
-                    "month": 11,
+                    "month": 8,
                     "categories": [
                         {
                             "category": "BALCONY",
-                            "type": "BA",
-                            "price": 1089.0
+                            "type": "SJA",
+                            "price": 4359.0
                         },
                         {
                             "category": "INSIDE",
                             "type": "IA",
-                            "price": 499.0
+                            "price": 2119.0
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XD",
-                            "price": 749.0
+                            "type": "XBO",
+                            "price": 2669.0
                         }
                     ]
                 }
@@ -1512,8 +1517,8 @@
                     "KUS",
                     "BAR",
                     "THE",
-                    "KOT",
                     "PIR",
+                    "KOT",
                     "MYK",
                     "CFU",
                     "SAN",
@@ -1553,6 +1558,11 @@
                     "month": 4,
                     "categories": [
                         {
+                            "category": "BALCONY",
+                            "type": "SJA",
+                            "price": 4359.0
+                        },
+                        {
                             "category": "DELUXE",
                             "type": "SG",
                             "price": 5619.0
@@ -1561,11 +1571,6 @@
                             "category": "INSIDE",
                             "type": "IA",
                             "price": 2119.0
-                        },
-                        {
-                            "category": "OUTSIDE",
-                            "type": "XBO",
-                            "price": 2669.0
                         }
                     ]
                 },
@@ -1577,11 +1582,6 @@
                             "category": "BALCONY",
                             "type": "SJA",
                             "price": 4359.0
-                        },
-                        {
-                            "category": "DELUXE",
-                            "type": "SG",
-                            "price": 5619.0
                         },
                         {
                             "category": "INSIDE",
@@ -1750,7 +1750,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XBO",
+                            "type": "XA",
                             "price": 549.0
                         }
                     ]
@@ -1816,7 +1816,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XBO",
+                            "type": "XA",
                             "price": 1279.0
                         }
                     ]
@@ -1894,7 +1894,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XA",
+                            "type": "XBO",
                             "price": 1139.0
                         }
                     ]
@@ -1920,7 +1920,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XBO",
+                            "type": "XA",
                             "price": 919.0
                         }
                     ]
@@ -1946,7 +1946,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XA",
+                            "type": "XBO",
                             "price": 1139.0
                         }
                     ]
@@ -1955,11 +1955,6 @@
                     "year": 2027,
                     "month": 1,
                     "categories": [
-                        {
-                            "category": "OUTSIDE",
-                            "type": "XA",
-                            "price": 1139.0
-                        },
                         {
                             "category": "BALCONY",
                             "type": "SJA",
@@ -1974,6 +1969,11 @@
                             "category": "INSIDE",
                             "type": "IB",
                             "price": 819.0
+                        },
+                        {
+                            "category": "OUTSIDE",
+                            "type": "XBO",
+                            "price": 1139.0
                         }
                     ]
                 },
@@ -1987,19 +1987,19 @@
                             "price": 1699.0
                         },
                         {
-                            "category": "DELUXE",
-                            "type": "SJC",
-                            "price": 2019.0
-                        },
-                        {
                             "category": "INSIDE",
                             "type": "IC",
                             "price": 849.0
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XA",
+                            "type": "XBO",
                             "price": 889.0
+                        },
+                        {
+                            "category": "DELUXE",
+                            "type": "SJC",
+                            "price": 2019.0
                         }
                     ]
                 },
@@ -2013,19 +2013,19 @@
                             "price": 1789.0
                         },
                         {
-                            "category": "DELUXE",
-                            "type": "SJC",
-                            "price": 2129.0
-                        },
-                        {
                             "category": "INSIDE",
                             "type": "IA",
                             "price": 869.0
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XA",
+                            "type": "XBO",
                             "price": 1089.0
+                        },
+                        {
+                            "category": "DELUXE",
+                            "type": "SJC",
+                            "price": 2129.0
                         }
                     ]
                 }
@@ -2083,7 +2083,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XA",
+                            "type": "XBO",
                             "price": 549.0
                         }
                     ]
@@ -2104,7 +2104,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XA",
+                            "type": "XBO",
                             "price": 549.0
                         }
                     ]
@@ -2125,7 +2125,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XBO",
+                            "type": "XA",
                             "price": 449.0
                         }
                     ]
@@ -2146,7 +2146,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XBO",
+                            "type": "XA",
                             "price": 449.0
                         }
                     ]
@@ -2183,10 +2183,10 @@
                 "departure": "ABD",
                 "visiting": [
                     "SBY",
-                    "DOH",
+                    "DUB",
                     "KHA",
-                    "MUS",
                     "ABD",
+                    "MUS",
                     "FJR"
                 ],
                 "arrival": "ABD"
@@ -2292,7 +2292,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XBO",
+                            "type": "XA",
                             "price": 1139.0
                         }
                     ]
@@ -2313,7 +2313,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XA",
+                            "type": "XBO",
                             "price": 889.0
                         }
                     ]
@@ -2360,13 +2360,23 @@
                     "month": 5,
                     "categories": [
                         {
+                            "category": "BALCONY",
+                            "type": "SJA",
+                            "price": 2449.0
+                        },
+                        {
                             "category": "DELUXE",
                             "type": "SJC",
                             "price": 2919.0
                         },
                         {
+                            "category": "INSIDE",
+                            "type": "IA",
+                            "price": 1339.0
+                        },
+                        {
                             "category": "OUTSIDE",
-                            "type": "XA",
+                            "type": "XBO",
                             "price": 1699.0
                         }
                     ]
@@ -2444,7 +2454,7 @@
                         },
                         {
                             "category": "OUTSIDE",
-                            "type": "XA",
+                            "type": "XBO",
                             "price": 1699.0
                         }
                     ]
